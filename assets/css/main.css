@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --font-inter: "Inter", serif;
+    --font-jost: "Jost", serif;
+}
+@theme {
+    --color-main: #212f34;
+    --color-btn: #398378;
+}
