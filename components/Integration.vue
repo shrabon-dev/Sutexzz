@@ -1,5 +1,5 @@
 <template>
-    <section id="integ_sect" class="py-32">
+    <section id="integ_sect" class="pb-32">
       <div class="container mx-auto">
         <div class="title text-center pb-16">
             <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Integrations</span>
