@@ -5,6 +5,9 @@
     --font-jost: "Jost", serif;
 }
 @theme {
-    --color-main: #212f34;
+    --color-main: #222b2a;
     --color-btn: #398378;
+}
+body{
+    background: linear-gradient(to bottom, #222b2a,#202222);
 }
