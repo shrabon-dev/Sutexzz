@@ -11,3 +11,33 @@
 body{
     background: linear-gradient(to bottom, #222b2a,#202222);
 }
+
+.fture_box .item{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+ 
+.fture_box .item:hover:after {
+    opacity: .5;
+}
+.fture_box .item::after {
+    content: '';
+    position: absolute;
+    top: var(--y,);
+    left: var(--x,);
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(#00ffb3,transparent,transparent);
+    opacity: 0.3;
+    transition: 0.5s, top 0s, left 0s;
+    pointer-events: none;
+    -webkit-transition: 0.5s, top 0s, left 0s;
+    -moz-transition: 0.5s, top 0s, left 0s;
+    -ms-transition: 0.5s, top 0s, left 0s;
+    -o-transition: 0.5s, top 0s, left 0s;
+    opacity: 0;
+    z-index: -1;
+}
