@@ -1,6 +1,6 @@
 <template>
     <section id="feature_sect" class="py-32 relative z-14">
-      <div class="container mx-auto relative z-10">
+      <div class="container mx-auto relative z-10 sm:px-4">
         <div class="flex justify-between">
           <div class="w-1/3">
             <div class="ftre_title">

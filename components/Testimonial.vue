@@ -9,116 +9,101 @@
                 </div>
 
                 <div class="reviews_box flex flex-wrap justify-between gap-10 pt-10">
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
+                    <div
+                    v-for="(review, index) in reviews"
+                    :key="index"
+                    class="review_item bg-white rounded-2xl p-4 max-w-[30%]"
+                    >
+                    <p class="font-inter text-black text-base font-light italic">
+                        "{{ review.quote }}"
+                    </p>
+                    <div class="info flex items-center gap-5 pt-3">
+                        <div class="img border border-main/50 rounded-full">
+                        <img :src="review.image" alt="client" />
+                        </div>
+                        <div class="name">
+                        <h6 class="font-jost text-black text-xl font-semibold">
+                            {{ review.name }}
+                        </h6>
+                        <p class="font-inter text-black/50 text-sm font-thin">
+                            {{ review.position }}
+                        </p>
                         </div>
                     </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review_item bg-white rounded-2xl p-4 max-w-[30%]">
-                        <p class="font-inter text-black text-base font-light italic">" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim. ""</p>
-                        <div class="info flex items-center gap-5 pt-3">
-                            <div class="img  border border-main/50 rounded-full">
-                                <img src="../assets/image/client/clnt.png" alt="client/clnt.png">
-                            </div>
-                            <div class="name">
-                                <h6 class="font-jost text-black text-xl font-semibold">Kasem Been Khilzi</h6>
-                                <p class="font-inter text-black/50 text-sm font-thin">CEO of G Tech.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <span class="absolute w-full h-full bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] top-0 left-0 "></span>
         </div>
     </section>
 </template>
+<script setup>
+import { ref } from 'vue';
+
+import clientImage from '../assets/image/client/clnt.png';
+
+const reviews = ref([
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Kasem Been Khilzi',
+    position: 'CEO of G Tech.',
+  },
+]);
+</script>

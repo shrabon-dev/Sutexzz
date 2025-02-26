@@ -7,16 +7,16 @@
         </div>
         <div class="img_box flex justify-between">
             <div class="img">
-                <img src="../assets/image/integ/1.png" alt="integ/1.png">
+                <img class="w-16 sm:w-18 md:w-20" src="../assets/image/integ/1.png" alt="integ/1.png">
             </div>
             <div class="img">
-                <img src="../assets/image/integ/2.png" alt="integ/2.png">
+                <img class="w-16 sm:w-18 md:w-20" src="../assets/image/integ/2.png" alt="integ/2.png">
             </div>
             <div class="img">
-                <img src="../assets/image/integ/3.png" alt="integ/3.png">
+                <img class="w-16 sm:w-18 md:w-20" src="../assets/image/integ/3.png" alt="integ/3.png">
             </div>
             <div class="img">
-                <img src="../assets/image/integ/4.png" alt="integ/4.png">
+                <img class="w-16 sm:w-18 md:w-20" src="../assets/image/integ/4.png" alt="integ/4.png">
             </div>
         </div>
       </div>
