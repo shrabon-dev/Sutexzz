@@ -14,15 +14,13 @@
 
       <!-- Swiper Container -->
       <div class="relative">
-        <swiper 
-         :modules="modules"
-          direction="vertical"
+        <swiper-container ref="containerRef"
           :slides-per-view="3"
-          :space-between="0"
-          navigation
-          @swiper="onSwiper"
-          @slide-change="onSlideChange"
+          speed="500"
+          loop="true"
+          direction="vertical"
           class="reviews_box h-[600px]"
+          @swiper="onSwiper"
         >
           <!-- Group reviews into chunks of 3 -->
           <swiper-slide
@@ -55,31 +53,22 @@
               </div>
             </div>
           </swiper-slide>
-        </swiper>
-
-        <!-- Custom Navigation Buttons -->
-        <div @click="slidePrev" class="swiper-button-prev"><</div>
-        <div @click="slideNext" class="swiper-button-next">></div>
+        </swiper-container>
+        <div @click="swiper.prev()" class="swiper-button-prev">&#10094;</div>
+        <div @click="swiper.next()" class="swiper-button-next">&#10095;</div>
+        <span class="absolute w-full h-1/2 bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] bottom-0 left-0 z-10"></span>
       </div>
-
-      <span class="absolute w-full h-1/2 bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] bottom-0 left-0 z-10"></span>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { ref, computed } from 'vue';
 import clientImage from '../assets/image/client/clnt.png';
+const containerRef = ref(null)
+const slides = ref(Array.from({ length: 10 }))
 
+const swiper = useSwiper(containerRef)
 
 // Group reviews into chunks of 3
 const chunkedReviews = computed(() => {
@@ -91,30 +80,10 @@ const chunkedReviews = computed(() => {
   return chunks;
 });
 
-// Access the Swiper instance
-const swiperInstance = ref(null);
 
-const onSwiper = (swiper) => {
-  swiperInstance.value = swiper;
-  console.log('Swiper instance:', swiper);
-};
 
-const onSlideChange = () => {
-  console.log('Slide changed');
-};
-// Navigation functions
-const slideNext = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slideNext();
-  }
-};
-
-const slidePrev = () => {
-  if (swiperInstance.value) {
-    swiperInstance.value.slidePrev();
-  }
-};
 const reviews = ref([
+  // Your reviews data here
   {
     quote:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
@@ -220,7 +189,57 @@ const reviews = ref([
     name: 'Umor',
     position: 'CEO of G Tech.',
   },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Umor',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Umor',
+    position: 'CEO of G Tech.',
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+    image: clientImage,
+    name: 'Umor',
+    position: 'CEO of G Tech.',
+  },
+  // Add more reviews as needed
 ]);
-
- 
 </script>
+
+<style scoped>
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  bottom: -10%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 45%;
+}
+
+.swiper-button-next {
+  right: 45%;
+}
+</style>
