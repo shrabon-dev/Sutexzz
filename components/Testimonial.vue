@@ -1,6 +1,6 @@
 <template>
     <section id="testimonial_sect" class="py-32">
-        <div class="container mx-auto relative">
+        <div class="container mx-auto relative px-4">
                 <div class="title text-center pb-16">
                     <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Testimonial</span>
                     <h4 class="text-white font-inter font-bold text-4xl">What are Customers says</h4>
@@ -8,11 +8,11 @@
                         more smoothly and communicate better. </p>
                 </div>
 
-                <div class="reviews_box flex flex-wrap justify-between gap-10 pt-10">
+                <div class="reviews_box flex flex-wrap justify-between gap-4 lg:gap-10 pt-10">
                     <div
                     v-for="(review, index) in reviews"
                     :key="index"
-                    class="review_item bg-white rounded-2xl p-4 max-w-[30%]"
+                    class="review_item bg-white rounded-2xl p-4 sm:w-[48%] lg:max-w-[30%]"
                     >
                     <p class="font-inter text-black text-base font-light italic">
                         "{{ review.quote }}"
