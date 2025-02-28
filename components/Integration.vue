@@ -7,18 +7,30 @@
         </div>
         <div class="img_box sm:flex justify-between items-center">
             <div class="img">
-                <img class="w-32 m-auto sm:w-18 md:w-32" src="../assets/image/integ/1.png" alt="integ/1.png">
+                <ScrollAnimate>
+                    <img class="w-32 m-auto sm:w-18 md:w-32" src="../assets/image/integ/1.png" alt="integ/1.png">
+                </ScrollAnimate>
             </div>
             <div class="img">
-                <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/2.png" alt="integ/2.png">
+                <ScrollAnimate>
+                    <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/2.png" alt="integ/2.png">
+                </ScrollAnimate>
             </div>
             <div class="img">
-                <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/3.png" alt="integ/3.png">
+                <ScrollAnimate>
+                    <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/3.png" alt="integ/3.png">
+                </ScrollAnimate>
             </div>
             <div class="img">
-                <img class="w-32 m-auto sm:w-18 md:w-32" src="../assets/image/integ/4.png" alt="integ/4.png">
+                <ScrollAnimate>
+                    <img class="w-32 m-auto sm:w-18 md:w-32" src="../assets/image/integ/4.png" alt="integ/4.png">
+                </ScrollAnimate>
             </div>
         </div>
       </div>
     </section>
 </template>
+<script setup>
+     import ScrollAnimate from '~/components/hooks/ScrollAnimate.vue';
+
+</script>

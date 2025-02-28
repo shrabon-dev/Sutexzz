@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css','~/assets/css/transition.css'],
 
   postcss: {
     plugins: {
@@ -24,5 +24,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-02-22',
-  modules: ['nuxt-swiper'],
+  modules: ['nuxt-swiper','@vueuse/motion/nuxt'],
+
 });

@@ -1,0 +1,16 @@
+/* Initial state */
+.fade-slide-enter-from-up {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  
+  /* Active transition */
+  .fade-slide-enter-active {
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* Final state */
+  .fade-slide-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
