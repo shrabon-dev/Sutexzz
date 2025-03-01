@@ -7,10 +7,10 @@
         </div>
         <div class="img_box sm:flex justify-between items-center">
             <div class="img">
-                <img class="w-32 m-auto sm:w-18 md:w-32" src="../assets/image/integ/1.png" alt="integ/1.png">
+                <img class="w-32 m-auto sm:w-18 md:w-38" src="../assets/image/integ/1.png" alt="integ/1.png">
             </div>
             <div class="img">
-                <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/2.png" alt="integ/2.png">
+                <img class="w-32  m-auto sm:w-18 md:w-28" src="../assets/image/integ/2.png" alt="integ/2.png">
             </div>
             <div class="img">
                 <img class="w-32  m-auto sm:w-18 md:w-32" src="../assets/image/integ/3.png" alt="integ/3.png">

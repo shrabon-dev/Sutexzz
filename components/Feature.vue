@@ -7,11 +7,7 @@
             <div class="title text-left pb-16">
               <span class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Features</span>
               <h4
-                v-motion="{
-                  initial: { opacity: 0, y: 100 },
-                  enter: { opacity: 1, y: 0, transition: { duration: 1000 } },
-                  visibleOnce: true,
-                }"
+               
                 class="text-white font-inter font-bold text-xl md:text-4xl"
               >
                 We are Integrated with industry best service providers
@@ -24,61 +20,35 @@
         </div>
         <div class="w-full lg:w-[55%]">
           <div
-            v-motion="{
-              initial: { opacity: 0, y: 100 },
-              enter: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1000,
-                  staggerChildren: 200, // Delay between each child animation
-                  delayChildren: 800, // Initial delay before the first child animation
-                },
-              },
-              visibleOnce: true,
-            }"
+            
             class="fture_box flex sm:gap-3 xl:gap-6 2xl:gap-8 justify-between flex-wrap"
           >
-          <FeatureItem
-  v-motion="{
-    initial: { opacity: 0, y: 100 },
-    enter: { opacity: 1, y: 0, transition: { duration: 1000, delay: 300 } },
-    visibleOnce: true,
-  }"
-  icon="ri:quill-pen-ai-fill"
-  title="Customer management"
-  description="Monitor progress against your plans and address deviations faster."
-/>
-<FeatureItem
-  v-motion="{
-    initial: { opacity: 0, y: 100 },
-    enter: { opacity: 1, y: 0, transition: { duration: 1000, delay: 500 } },
-    visibleOnce: true,
-  }"
-  icon="ri:pen-nib-fill"
-  title="Scheduling"
-  description="Monitor progress against your plans and address deviations faster."
-/>
             <FeatureItem
-              v-motion="{}"
+              icon="ri:quill-pen-ai-fill"
+              title="Customer management"
+              description="Monitor progress against your plans and address deviations faster."
+            />
+            <FeatureItem
+              icon="ri:pen-nib-fill"
+              title="Scheduling"
+              description="Monitor progress against your plans and address deviations faster."
+            />
+            <FeatureItem
               icon="ri:mastercard-fill"
               title="Quotes and estimates"
               description="Monitor progress against your plans and address deviations faster."
             />
             <FeatureItem
-              v-motion="{}"
               icon="ri:bank-card-fill"
               title="Credit card payment"
               description="Monitor progress against your plans and address deviations faster."
             />
             <FeatureItem
-              v-motion="{}"
               icon="iconamoon:badge-fill"
               title="Referrals and reviews"
               description="Monitor progress against your plans and address deviations faster."
             />
             <FeatureItem
-              v-motion="{}"
               icon="iconamoon:invoice-fill"
               title="Billing and invoicing"
               description="Monitor progress against your plans and address deviations faster."
