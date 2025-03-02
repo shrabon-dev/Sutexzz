@@ -2,8 +2,8 @@
     <section id="integ_sect" class="md:pb-32">
       <div class="container mx-auto sm:px-4">
         <div class="title text-center pb-16">
-            <span class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Integrations</span>
-            <h4 class="text-white font-inter font-bold text-xl md:text-4xl">We are Integrated with industry best service providers</h4>
+            <span  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Integrations</span>
+            <h4  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="text-white font-inter font-bold text-xl md:text-4xl">We are Integrated with industry best service providers</h4>
         </div>
         <div class="img_box sm:flex justify-between items-center">
             <div class="img">

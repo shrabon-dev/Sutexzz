@@ -17,6 +17,7 @@
        <img class=" absolute right-0 top-0 z-0" src="../assets/image/shape.png" alt="banner iamge">
     </section>
 </template>
+
 <script setup>
 import { Icon } from '@iconify/vue';
 </script>

@@ -2,18 +2,18 @@
   <section id="testimonial_sect" class="py-32">
     <div class="container mx-auto relative px-4">
       <div class="title text-center pb-16">
-        <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">
+        <span v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">
           Testimonial
         </span>
-        <h4 class="text-white font-inter font-bold text-4xl">What are Customers says</h4>
-        <p class="font-jost text-xl text-white font-thin max-w-2/3 mx-auto pt-4">
+        <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="text-white font-inter font-bold text-4xl">What are Customers says</h4>
+        <p v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="font-jost text-xl text-white font-thin max-w-2/3 mx-auto pt-4">
           Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate
           more smoothly and communicate better.
         </p>
       </div>
 
       <!-- Swiper Container -->
-      <div class="relative">
+      <div v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="relative">
         <swiper-container ref="containerRef"
           :slides-per-view="3"
           :breakpoints="{

@@ -1,5 +1,5 @@
 <template>
-    <div class="item xs:w-[49%] xsm:w-[48%] mb-5 md:mb-0 md:w-[48%] bg-white/10 rounded-lg  xsm:p-5 hover:bg-btn duration-300 ease-in-out group" @mousemove="handleMouseMove">
+    <div  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="item xs:w-[49%] xsm:w-[48%] mb-5 md:mb-0 md:w-[48%] bg-white/10 rounded-lg  xsm:p-5 hover:bg-btn duration-300 ease-in-out group" @mousemove="handleMouseMove">
       <div class="flex items-center">
         <div class="icon group-hover:text-black group-hover:bg-white duration-300 ease-in-out text-xs xsm:text-xl xl:text-7xl text-white rounded-lg bg-btn p-2 xsm:p-3 m-3">
           <Icon :icon="icon" />
