@@ -5,7 +5,7 @@
                 <div class="logo">
                     <img class="w-24 md:w-32" src="/assets/image/logo.png" alt="">
                 </div>
-                <div class="menu flex items-center gap-20">
+                <div class="menu flex items-center gap-10 lg:gap-20">
                     <div  class="hidden md:block menu_items">
                         <ul class="flex space-x-5">
                             <li> <nuxt-link class="text-btn font-normal font-jost text-lg border-b" to="/">Home</nuxt-link> </li>

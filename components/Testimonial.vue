@@ -1,17 +1,8 @@
 <template>
   <section id="testimonial_sect" class="py-32">
-    <div class="container mx-auto relative px-4">
-      <div class="title text-center pb-16">
-        <span v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">
-          Testimonial
-        </span>
-        <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="text-white font-inter font-bold text-4xl">What are Customers says</h4>
-        <p v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="font-jost text-xl text-white font-thin max-w-2/3 mx-auto pt-4">
-          Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate
-          more smoothly and communicate better.
-        </p>
-      </div>
-
+    <div class="container mx-auto relative ">
+      <Title key_t="Testimonial" title="What are Customers says"  description=" Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate
+          more smoothly and communicate better." />
       <!-- Swiper Container -->
       <div v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="relative">
         <swiper-container ref="containerRef"
@@ -62,8 +53,8 @@
             </div>
           </swiper-slide>
         </swiper-container>
-        <div @click="swiper.prev()" class="swiper-button-prev">&#10094;</div>
-        <div @click="swiper.next()" class="swiper-button-next">&#10095;</div>
+        <div @click="swiper.prev()" class="swiper-button-prev left-[30%] xsm:left-[40%] md:left-[45%]">&#10094;</div>
+        <div @click="swiper.next()" class="swiper-button-next right-[35%] xsm:right-[40%] md:right-[45%]">&#10095;</div>
         <span class="absolute w-full h-1/2 bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] bottom-0 left-0 z-10"></span>
       </div>
     </div>
@@ -73,6 +64,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import clientImage from '../assets/image/client/clnt.png';
+import Title from './util/Title.vue';
 const containerRef = ref(null)
 const slides = ref(Array.from({ length: 10 }))
 
@@ -243,11 +235,5 @@ const reviews = ref([
   z-index: 10;
 }
 
-.swiper-button-prev {
-  left: 45%;
-}
-
-.swiper-button-next {
-  right: 45%;
-}
+ 
 </style>
