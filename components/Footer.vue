@@ -1,6 +1,6 @@
 <template>
    <footer class="bg-main py-10 relative z-50">
-     <div class="container mx-auto px-4">
+     <div class="container mx-auto">
         <div class="ftr_tp border-y py-5 sm:px-10 border-white/60">
             <div class="flex justify-between items-center flex-wrap">
                 <ul class="flex flex-wrap gap-5">

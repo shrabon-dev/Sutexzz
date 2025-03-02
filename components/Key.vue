@@ -1,6 +1,6 @@
 <template>
     <section id="key_aspect_sect" class="bg-btn/5 py-14 md:py-32">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto">
         <Title key_t="Key Aspect" title="Get complete visibility and control" description="Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate more smoothly and communicate better." />
       
         <div  v-gsap.from="{ opacity:0, y: 320 }" class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">

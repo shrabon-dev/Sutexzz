@@ -1,6 +1,6 @@
 <template>
     <section id="try_sect" class="md:py-20 bg-main overflow-hidden">
-      <div class="container mx-auto px-4 ">
+      <div class="container mx-auto">
          <div v-gsap.whenVisible.from="{ opacity: 0, y: -132 }" class="bg-btn rounded-xl">
 
              <div class="try md:flex items-center justify-between">

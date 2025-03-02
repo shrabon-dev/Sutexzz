@@ -1,6 +1,6 @@
 <template>
     <section id="pricing_sect" class="pb-40">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto ">
             <Title key_t="Pricing" title="Our Pricing" description="Projectile helps you collaborate more smoothly and communicate better.  Projectile helps you collaborate 
                     more smoothly and communicate better. " />
          
