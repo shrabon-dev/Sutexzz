@@ -17,7 +17,7 @@
         </div>
         <div class="w-full lg:w-[55%]">
           <div
-            
+            v-gsap.whenVisible.from="{ opacity: 0, y: 200 }"
             class="fture_box flex sm:gap-3 xl:gap-6 2xl:gap-8 justify-between flex-wrap"
           >
             <FeatureItem   

@@ -3,8 +3,8 @@
       <div class="container mx-auto px-4">
         <Title key_t="Key Aspect" title="Get complete visibility and control" description="Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate more smoothly and communicate better." />
       
-        <div class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
-          <div v-gsap.whenVisible.from="{ opacity: 0, y: 100 }"
+        <div  v-gsap.from="{ opacity:0, y: 320 }" class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
+          <div
             v-for="(item, index) in items"
             :key="index"
             :class="[
@@ -33,11 +33,13 @@
     </section>
   </template>
   
-  <script setup>
-  import { ref } from 'vue';
+  <script setup> 
   import Title from './util/Title.vue';
   import iconImage from '../assets/image/icon.png';
-  
+ 
+  import { onMounted, ref } from 'vue';
+
+ 
   const items = ref([
     {
       icon: iconImage,
