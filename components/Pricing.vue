@@ -1,5 +1,5 @@
 <template>
-    <section id="pricing_sect" class="pb-40">
+    <section id="pricing_sect" class="pb-14 md:pb-40">
         <div class="container mx-auto ">
             <Title key_t="Pricing" title="Our Pricing" description="Projectile helps you collaborate more smoothly and communicate better.  Projectile helps you collaborate 
                     more smoothly and communicate better. " />

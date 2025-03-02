@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonial_sect" class="py-32">
+  <section id="testimonial_sect" class="py-10 pb-20 sm:py-32">
     <div class="container mx-auto relative ">
       <Title key_t="Testimonial" title="What are Customers says"  description=" Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate
           more smoothly and communicate better." />
