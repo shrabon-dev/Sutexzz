@@ -1,5 +1,5 @@
 <template>
-    <section id="key_aspect_sect" class="bg-btn/5 md:py-32">
+    <section id="key_aspect_sect" class="bg-btn/5 py-10 md:py-32">
       <div class="container mx-auto px-4">
         <div class="title text-center pb-16">
           <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Key Aspect</span>

@@ -24,6 +24,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-02-22',
-  modules: ['nuxt-swiper','@vueuse/motion/nuxt'],
+  modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt'],
 
 });
