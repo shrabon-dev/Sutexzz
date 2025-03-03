@@ -10,8 +10,10 @@
     --breakpoint-xs: 300px;
     --breakpoint-xsm: 500px;
 }
+html,
 body{
     background: linear-gradient(to bottom, #222b2a,#202222);
+    overflow-x: hidden;
 }
 
 .fture_box .item{

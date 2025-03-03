@@ -1,14 +1,11 @@
 <template>
-    <section id="pricing_sect" class="pb-40">
-        <div class="container mx-auto px-4">
-            <div class="title text-center pb-20">
-                <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Pricing</span>
-                <h2 class="text-white font-jost font-bold text-4xl"> Our Pricing </h2>
-                <p class="text-white font-jost font-normal text-xl max-w-2/3 mx-auto pt-4">Projectile helps you collaborate more smoothly and communicate better.  Projectile helps you collaborate 
-                    more smoothly and communicate better. </p>
-            </div>
+    <section id="pricing_sect" class="pb-14 md:pb-40">
+        <div class="container mx-auto ">
+            <Title key_t="Pricing" title="Our Pricing" description="Projectile helps you collaborate more smoothly and communicate better.  Projectile helps you collaborate 
+                    more smoothly and communicate better. " />
+         
             <div class="pricing_box flex justify-between xl:justify-center flex-wrap sm:pt-10">
-                <div v-for="(item,index) in items" :class="['prc_card px-4 sm:px-10 md:px-3 mb-10 md:mb-0 lg:px-6 xl:px-10 2xl:px-14 py-10 md:py-6 xl:py-16 rounded-lg border-white/10 w-full sm:w-[100%%] md:w-[30%] lg:w-[30%]',{'md:scale-[1.1] bg-btn':item.reqomendet,'bg-white/10':!item.reqomendet}]">
+                <div v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" v-for="(item,index) in items" :class="['prc_card px-4 sm:px-10 md:px-3 mb-10 md:mb-0 lg:px-6 xl:px-10 2xl:px-14 py-10 md:py-6 xl:py-16 rounded-lg border-white/10 w-full sm:w-[100%%] md:w-[30%] lg:w-[30%]',{'md:scale-[1.1] bg-btn':item.reqomendet,'bg-white/10':!item.reqomendet}]">
                     <div class="tp border-b pb-5 border-white/40">
                         <h4 class="font-jost font-semibold md:text-base xl:text-2xl text-white">{{ item.title }} <span v-if="item.reqomendet == true" class="capitalize ml-5 bg-black text-xs xl:text-lg px-5 py-2 rounded-lg">most popular</span> </h4>
                         <p  class="font-jost pt-5 font-thin text-base md:text-xs lg:text-base text-white"> {{ item.short_info  }} </p>
@@ -34,6 +31,7 @@
 </template>
 <script setup>
 import { Icon } from '@iconify/vue';
+import Title from './util/Title.vue';
 const items = [
     {
         title:'Silver',

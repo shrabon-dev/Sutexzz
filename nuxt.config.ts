@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  
   devtools: { enabled: true },
   css: ['~/assets/css/main.css','~/assets/css/transition.css'],
 
@@ -10,7 +11,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-
   app:{
    head: {
      link: [
@@ -25,5 +25,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-02-22',
   modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt'],
-
+  vgsap: {
+    presets: [],
+    breakpoint: 768,
+    scroller: '',
+    composable: true
+}
 });
+ 

@@ -1,29 +1,24 @@
 <template>
-    <section id="key_aspect_sect" class="bg-btn/5 py-10 md:py-32">
-      <div class="container mx-auto px-4">
-        <div class="title text-center pb-16">
-          <span class="bg-btn font-inter text-white text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Key Aspect</span>
-          <h4 class="text-white font-inter font-bold text-4xl">Get complete visibility and control</h4>
-          <p class="font-jost text-xl text-white font-thin pt-5 max-w-2/3 mx-auto">
-            Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate more smoothly and communicate better.
-          </p>
-        </div>
-        <div class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
+    <section id="key_aspect_sect" class="bg-btn/5 py-14 md:py-32">
+      <div class="container mx-auto">
+        <Title key_t="Key Aspect" title="Get complete visibility and control" description="Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate more smoothly and communicate better." />
+      
+        <div  v-gsap.from="{ opacity:0, y: 320 }" class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
           <div
             v-for="(item, index) in items"
             :key="index"
             :class="[
-              'key_item text-center xsm:w-[45%] md:max-w-[300px] xl:max-w-[360px] mb-5 p-5',
+              'key_item text-center xsm:w-[45%] md:max-w-[300px] xl:max-w-[360px] mb-5 p-5 hover:shadow-2xl hover:bg-btn/10 duration-400 ease-in-out rounded-lg ',
               { 'flex justify-center items-center bg-btn/10 rounded-3xl min-w-[300px]': item.isSpecial },
             ]"
           >
-            <div v-if="!item.isSpecial" class="icon inline-block z-10 relative after:w-20 after:h-20 after:rounded-full after:bg-btn/40 after:z-[-1] after:absolute after:top-5 after:-right-5">
-              <img :src="item.icon" alt="icon" />
+            <div v-if="!item.isSpecial" class="icon inline-block z-10 relative after:w-20 after:h-20 after:rounded-full after:bg-btn/40 after:z-[-1] after:absolute after:top-0 md:after:top-5 after:-right-5">
+              <img class="w-14 md:w-20" :src="item.icon" alt="icon" />
               <!-- <img src="../assets/image/icon.png" alt="icon" /> -->
             </div>
             <div class="cntn">
               <h4 class="font-inter text-base md:text-xl text-white font-semibold pt-8 pb-4">{{ item.title }}</h4>
-              <p v-if="!item.isSpecial" class="font-inter text-xs md:text-base text-white font-normal">{{ item.description }}</p>
+              <p v-if="!item.isSpecial" class="font-inter text-xs md:text-base text-white/70 font-normal">{{ item.description }}</p>
               <a
                 v-if="item.isSpecial"
                 href="#"
@@ -38,10 +33,13 @@
     </section>
   </template>
   
-  <script setup>
-  import { ref } from 'vue';
+  <script setup> 
+  import Title from './util/Title.vue';
   import iconImage from '../assets/image/icon.png';
-  
+ 
+  import { onMounted, ref } from 'vue';
+
+ 
   const items = ref([
     {
       icon: iconImage,

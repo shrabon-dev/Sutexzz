@@ -1,7 +1,7 @@
 <template>
    <footer class="bg-main py-10 relative z-50">
-     <div class="container mx-auto px-4">
-        <div class="ftr_tp border-y py-5 px-10 border-white/60">
+     <div class="container mx-auto">
+        <div class="ftr_tp border-y py-5 sm:px-10 border-white/60">
             <div class="flex justify-between items-center flex-wrap">
                 <ul class="flex flex-wrap gap-5">
                     <li><nuxt-link class="text-white font-normal font-jost text-base" to="/">News</nuxt-link></li> 
@@ -18,7 +18,7 @@
         </div>
         <div class="ftr_cntr">
             <div class="flex justify-between items-center flex-wrap py-5">
-                <div class="cpn_prt w-1/3">
+                <div class="cpn_prt sm:w-1/3">
                     <img src="../assets/image/logo.png" alt="logo.png">
                     <p class="text-base pt-5 font-thin text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis quod laborum eaque praesentium iusto fugiat quos delectus enim! Officiis, doloribus. </p>
                 </div>

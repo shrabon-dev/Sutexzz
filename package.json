@@ -27,6 +27,7 @@
     "@iconify-json/fluent-mdl2": "^1.2.1",
     "@tailwindcss/postcss": "^4.0.8",
     "autoprefixer": "^10.4.20",
+    "nuxt-gsap-module": "^2.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.8"
   }
