@@ -105,8 +105,8 @@
                                 <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 bg-main border-2 border-main">Sign Up</button>
                                 <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 ml-5 bg-transparent border-2 border-white">Try Now</button>
                             </div>
-                            <div class="pt-32">
-                                <p class="font-jost font-thin text-base text-white/90 py-8 italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, repellendus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, repellendus?</p>
+                            <div class="pt-10 md:pt-32">
+                                <p class="font-jost font-thin text-base text-white/90 py-4 sm:py-8 italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, repellendus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, repellendus?</p>
                                 <p class="font-jost font-thin text-sm text-white/70">Created by <span class="text-main">Muhammad Shrabon Been Khattab</span></p>
                             </div>
                         </div>
