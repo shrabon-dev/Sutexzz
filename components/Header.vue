@@ -55,7 +55,7 @@
                     <div class="m-btn cursor-pointer text-right" @click="toggleSidebar">
                         <Icon class="text-3xl md:text-4xl text-white" icon="iconoir:menu" />
                     </div>
-                    <div class="side-bar-menus fixed w-72 sm:w-96 h-[90vh] bg-btn right-0 top-14 md:top-19 pb-20 transition-transform duration-100 ease-in-out" :class="{ 'translate-x-0': isSidebarOpen, 'translate-x-full': !isSidebarOpen }">
+                    <div class="side-bar-menus fixed w-72 sm:w-96 h-[92vh] bg-btn right-0 top-14 md:top-19 pb-20 transition-transform duration-100 ease-in-out" :class="{ 'translate-x-0': isSidebarOpen, 'translate-x-full': !isSidebarOpen }">
                         <div class="clse-btn bg-main/30 pr-10">
                             <button type="button" @click="toggleSidebar" class="px-5 md:px-7 cursor-pointer duration-300 hover:bg-btn text-xl md:text-2xl text-white font-inter py-3 md:py-4 bg-main">
                                 <Icon icon="ic:round-close"/>
