@@ -55,7 +55,7 @@
         </swiper-container>
         <div @click="swiper.prev()" class="swiper-button-prev left-[30%] xsm:left-[40%] md:left-[45%]">&#10094;</div>
         <div @click="swiper.next()" class="swiper-button-next right-[35%] xsm:right-[40%] md:right-[45%]">&#10095;</div>
-        <span class="absolute w-full h-1/2 bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] bottom-0 left-0 z-10"></span>
+        <span class="absolute hidden sm:block w-full h-1/2 bg-gradient-to-b from-main/0 from-0% to-90% to-[#212424] bottom-0 left-0 z-10"></span>
       </div>
     </div>
   </section>
