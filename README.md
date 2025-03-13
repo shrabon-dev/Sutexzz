@@ -1,75 +1,18 @@
-# Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Sutexzz A Nuxt JS Application
 
-## Setup
+Sutexzz is my first application built with Nuxt JS. I am currently learning Nuxt JS and using this project to enhance my skills.
 
-Make sure to install dependencies:
+The application consists of two main parts:
 
-```bash
-# npm
-npm install
+### Front End:  
+This part is already completed and deployed. You can view it here: https://sutexzz.vercel.app/
 
-# pnpm
-pnpm install
+### Admin Panel:
+This part is currently in development. It will include:
 
-# yarn
-yarn install
+- A design layout for the admin interface.
 
-# bun
-bun install
-```
+- Functionality for user authentication.
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Integration with third-party APIs.

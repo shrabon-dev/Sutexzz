@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="ftr_btm border-t border-white/60">
-            <p class="text-white text-center pt-6">Copyright © 2025. <span class="text-btn ">Muhammad Shrabon Been Khattab</span> . All rights reserved.</p>
+            <p class="text-white text-center py-6">Copyright © 2025. <span class="text-btn ">Muhammad Shrabon Been Khattab</span> . All rights reserved.</p>
         </div>
      </div>
    </footer>

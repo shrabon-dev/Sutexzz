@@ -1,9 +1,9 @@
 <template>
-    <header :class="['px-4 w-full z-[999999]', isScrolled ? 'fixed bg-main border-b py-4 border-white/10' : 'absolute py-4 bg-transparent']">
+    <header :class="['px-4 w-full z-[999999]', isScrolled ? 'fixed bg-main border-b py-4 border-white/10' : 'absolute py-10 bg-transparent']">
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div class="logo">
-                    <img class="w-24 md:w-32" src="/assets/image/logo.png" alt="">
+                  <nuxt-link to="/"><img class="w-24 md:w-32" src="/assets/image/logo.png" alt=""></nuxt-link>
                 </div>
                 <div class="menu flex items-center gap-10 lg:gap-20">
                     <div class="hidden md:block menu_items">
@@ -55,7 +55,7 @@
                     <div class="m-btn cursor-pointer text-right" @click="toggleSidebar">
                         <Icon class="text-3xl md:text-4xl text-white" icon="iconoir:menu" />
                     </div>
-                    <div class="side-bar-menus fixed w-72 sm:w-96 h-[92vh] bg-btn right-0 top-14 md:top-19 pb-20 transition-transform duration-100 ease-in-out" :class="{ 'translate-x-0': isSidebarOpen, 'translate-x-full': !isSidebarOpen }">
+                    <div class="side-bar-menus fixed w-72 sm:w-96 h-[100vh] bg-btn right-0 top-0 pb-20 transition-transform duration-100 ease-in-out" :class="{ 'translate-x-0': isSidebarOpen, 'translate-x-full': !isSidebarOpen }">
                         <div class="clse-btn bg-main/30 pr-10">
                             <button type="button" @click="toggleSidebar" class="px-5 md:px-7 cursor-pointer duration-300 hover:bg-btn text-xl md:text-2xl text-white font-inter py-3 md:py-4 bg-main">
                                 <Icon icon="ic:round-close"/>
