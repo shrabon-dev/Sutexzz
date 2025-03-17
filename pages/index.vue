@@ -17,4 +17,10 @@
      import Try from '~/components/Try.vue';
      import Key from '~/components/Key.vue';
      import Testimonial from '~/components/Testimonial.vue';
+     import { useAuthStore } from "@/store/auth";
+
+
+     const auth = useAuthStore();
+     console.log('token:' + auth.token)
+
 </script>

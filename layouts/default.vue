@@ -1,9 +1,13 @@
 <template>
-     <Header />
-    <main>
-      <slot />
-    </main>
+  <ClientOnly>
+    <Header />
+  </ClientOnly>
+  <main>
+    <slot />
+  </main>
+  <ClientOnly>
     <Footer />
+  </ClientOnly>
 </template>
 
 <script setup>

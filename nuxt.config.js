@@ -4,12 +4,16 @@ export default defineNuxtConfig({
   
   devtools: { enabled: true },
   css: ['~/assets/css/main.css','~/assets/css/transition.css'],
-
+  mongoose: {
+    uri: process.env.MONGODB_URI,
+    options: {},
+    modelsDir: 'models',
+    devtools: true,
+  },
   postcss: {
     plugins: {
-      '@tailwindcss/postcss': {}, // Use the correct plugin
+      '@tailwindcss/postcss': {}, 
       autoprefixer: {},
-      '~/plugins/initAuth.js':{},
     },
   },
   app:{
@@ -24,34 +28,24 @@ export default defineNuxtConfig({
  
   },
 
-  compatibilityDate: '2025-02-22',
-  modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt',],
-  auth: {
-    strategies: {
-      local: {
-        token: {
-          property: 'token', // Property name in the API response
-          global: true,      // Automatically include token in requests
-        },
-        user: {
-          property: 'user',  // Property name in the API response
-          autoFetch: true,   // Automatically fetch user data after login
-        },
-        endpoints: {
-          login: { url: '/api/auth/login', method: 'post' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get' },
-        },
+  compatibilityDate: '2025-03-16',
+  modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt', 'nuxt-mongoose'],
+  plugins: ['~/plugins/pinia.js'],
+  vite: {
+    server: {
+      hmr: {
+        protocol: 'ws', // Ensure it's using WebSocket
+        host: 'localhost',
+        port: 3000,
       },
     },
-    redirect: {
-      login: '/auth/login',   // Redirect to login page if not authenticated
-      logout: '/auth/login',   // Redirect to login page after logout
-      home: '/admin',         // Redirect to admin dashboard after login
-    },
+  },
+  auth: {
+    origin: "http://localhost:3000", // Your frontend URL
+    enableGlobalAppMiddleware: true,
   },
   axios: {
-    baseURL: 'http://localhost:3000', // Your API base URL
+    baseURL: 'http://localhost:3000',  
   },
   vgsap: {
     presets: [],
@@ -60,4 +54,3 @@ export default defineNuxtConfig({
     composable: true
 }
 });
- 

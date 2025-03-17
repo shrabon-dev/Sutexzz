@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                     <div class="menu_btn">
-                        <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 bg-btn border-2 border-btn">Sign Up</button>
+                        <nuxt-link to="/register" class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 bg-btn border-2 border-btn">Sign Up</nuxt-link>
                         <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 ml-5 bg-transparent border-2 border-white">Try Now</button>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                                 </li>
                             </ul>
                             <div class="menu_btn pt-10">
-                                <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 bg-main border-2 border-main">Sign Up</button>
+                                <nuxt-link to="/register" class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 bg-main border-2 border-main"> Sign Up </nuxt-link>
                                 <button class="font-jost cursor-pointer font-normal text-xs md:text-base text-white px-2 md:px-5 rounded-sm py-1 md:py-2 ml-5 bg-transparent border-2 border-white">Try Now</button>
                             </div>
                             <div class="pt-10 md:pt-32">

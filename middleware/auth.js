@@ -1,23 +1,17 @@
-export default function ({ store, redirect }) {
-  // Ensure this runs only on the client side
+import { defineNuxtRouteMiddleware, navigateTo } from "nuxt/app";
+import { useAuthStore } from "~/store/auth";
+
+export default defineNuxtRouteMiddleware(() => {
+  const auth = useAuthStore();
+
+  // Check if running on the client-side
   if (process.client) {
-    // Retrieve the auth object from localStorage
-    const authString = localStorage.getItem('auth');
+    // Initialize the token and user if not already set
+    auth.initUserFromLocalStorage();
 
-    // If auth data is not found, redirect to login
-    if (!authString) {
-      console.log(auth.token)
-
-      return navigateTo('/client/login');
-    }
-
-    // Parse the auth object
-    const auth = JSON.parse(authString);
-
-    // If the token is missing or invalid, redirect to login
-    if (!auth?.token) {
-      console.log(auth)
-      return navigateTo('/client/login');
+    // Check if there's a token in localStorage or the store
+    if (!auth.token) {
+      return navigateTo("/login");
     }
   }
-}
+});
