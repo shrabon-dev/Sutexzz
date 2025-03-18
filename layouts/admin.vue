@@ -1,11 +1,22 @@
 <template>
-    <nav>Admin Nav Bar</nav>
-     <main>
-        <slot/>
-     </main>
-    <footer>Footer</footer>
+    <div class="grid grid-cols-12 p-5">
+        <div class="sidebar col-span-2 pr-5 relative w-full">
+            <Sidebar />
+        </div>
+        <div class="layouts  col-span-10 pb-5">
+            <Header />
+            <main>
+                <slot/>
+            </main>
+            <Footer/>
+        </div>
+    </div>
 </template>
 
 <script setup>
+import Footer from '../components/panel/Footer.vue';
+import Header from '../components/panel/Header.vue';
+import Sidebar from '../components/panel/Sidebar.vue';
+
  
 </script>

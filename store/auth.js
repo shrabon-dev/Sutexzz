@@ -3,16 +3,25 @@ import { defineStore } from "pinia";
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     user: null,
-    token: null, // Do not access localStorage directly in the state initialization
+    token: null,
   }),
 
   actions: {
+    async register(data) {
+      try {
+        const res = await $fetch("/api/auth/register", { method: "POST", body: data });
+        console.log("Response after register:", res);
+        return res;
+      } catch (error) {
+        console.error("Register error:", error);
+        return { error: error.message };
+      }
+    },
     async login(credentials) {
       try {
         const response = await $fetch("/api/auth/login", { method: "POST", body: credentials });
 
         if (response.token) {
-          // Store token in localStorage on the client-side
           if (process.client) {
             localStorage.setItem("token", response.token);
           }
@@ -32,7 +41,7 @@ export const useAuthStore = defineStore("auth", {
       this.token = null;
       this.user = null;
       if (process.client) {
-        localStorage.removeItem("token"); // Clear token from localStorage on the client-side
+        localStorage.removeItem("token"); 
       }
       console.log("User logged out");
       return { message: "Logged out successfully" };

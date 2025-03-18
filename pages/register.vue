@@ -22,7 +22,11 @@
             </p>
           </div>
         </form>
-        <p v-if="message">{{ message }}</p>
+        <transition name="fade">
+          <p v-if="message" class="bg-blue-900 p-3 text-center text-white font-monts font-normal text-lg">
+            <span class="text-yellow-400">!!</span> {{ message }} <span class="text-yellow-400">!!</span>
+          </p>
+        </transition>
       </div>
     </div>
   </section>
@@ -30,6 +34,7 @@
 
 <script>
 import { useAuthStore } from "@/store/auth";
+import { navigateTo } from "nuxt/app";
 
 export default {
   data() {
@@ -54,12 +59,28 @@ export default {
           password: this.form.password
         });
         console.log("Register API response:", response);
+        this.message = response.message + '. Please, login to access admin panel';
 
-        this.message = response;
+        setTimeout(()=>{
+          this.message = ''
+          navigateTo('/login')
+        },2000)
+
       } catch (error) {
         this.message = "Registration failed!";
+        setTimeout(()=>{
+          this.message = ''
+        },2000)
       }
     }
   }
 };
 </script>
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+</style>

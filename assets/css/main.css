@@ -9,6 +9,10 @@
     --color-btn: #398378;
     --breakpoint-xs: 300px;
     --breakpoint-xsm: 500px;
+    --color-panel-dark: #2C3930;
+    --color-panel-sub-dark: #3F4F44;
+    --color-panel-sub-text: #A27B5C;
+    --color-panel-text-light: #DCD7C9;
 }
 html,
 body{

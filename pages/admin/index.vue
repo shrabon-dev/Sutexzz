@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen bg-amber-700 text-9xl flex justify-center items-center ">
+  <div class="w-full h-screen bg-panel-dark text-9xl flex justify-center items-center ">
       Admin Panel 
   </div>   
 </template>

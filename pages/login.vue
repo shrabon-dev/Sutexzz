@@ -29,12 +29,12 @@ const error = ref("");
 
 const login = async () => {
   console.log('token:' + auth.token)
-  error.value = ""; // Reset previous errors
+  error.value = ""; 
   try {
     const response = await auth.login({ email: email.value, password: password.value });
 
     if (response?.error) {
-      error.value = response.error; // Show error message
+      error.value = response.error;
     } else {
       console.log("Login successful:", response);
       router.push("/admin");  
