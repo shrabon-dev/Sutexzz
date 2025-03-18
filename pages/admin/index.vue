@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-screen bg-panel-dark text-9xl flex justify-center items-center ">
-      Admin Panel 
+      Admin Panel
   </div>   
 </template>
 <script setup>
