@@ -14,6 +14,7 @@
     --color-panel-sub-text: #A27B5C;
     --color-panel-text-light: #DCD7C9;
 }
+ 
 html,
 body{
     background: linear-gradient(to bottom, #222b2a,#202222);
