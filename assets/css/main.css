@@ -3,6 +3,7 @@
 @theme {
     --font-inter: "Inter", serif;
     --font-jost: "Jost", serif;
+    --font-poppin: "Poppins", sans-serif;
 }
 @theme {
     --color-main: #222b2a;
@@ -26,7 +27,16 @@ body{
     overflow: hidden;
     z-index: 1;
 }
+
+table{
+    row-gap: 20px !important;
+}
+
+td{
+    padding: 10px 0 !important;
+}
  
+
 .fture_box .item:hover:after {
     opacity: .5;
 }
