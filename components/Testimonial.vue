@@ -45,7 +45,7 @@
                     <h6 class="font-jost text-black text-xl font-semibold">
                       {{ review.name }}
                     </h6>
-                    <p class="font-inter text-black/50 text-sm font-thin">
+                    <p class="font-inter text-black/50 text-sm font-light">
                       {{ review.position }}
                     </p>
                   </div>

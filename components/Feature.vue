@@ -9,7 +9,7 @@
               <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="text-white font-inter font-bold text-xl md:text-4xl">
                 We are Integrated with industry best service providers
               </h4>
-              <p  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="font-jost text-sm md:text-xl text-white font-thin pt-4 md:pt-10">
+              <p  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="font-jost text-sm md:text-xl text-white font-light pt-4 md:pt-10">
                 Projectile helps you collaborate more smoothly and communicate better.
               </p>
             </div>

@@ -4,7 +4,7 @@
           {{key_t}}
         </span>
         <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="text-white font-inter font-bold text-lg md:text-4xl"> {{ title }} </h4>
-        <p v-if="description" v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="font-jost text-sm md:text-xl text-white font-thin max-w-[88%] md:max-w-2/3 mx-auto pt-4">{{ description.replace(/\r?\n/g, ' ') }}</p>
+        <p v-if="description" v-gsap.whenVisible.from="{ opacity: 0, y: 100 }" class="font-jost text-sm md:text-xl text-white font-light max-w-[88%] md:max-w-2/3 mx-auto pt-4">{{ description.replace(/\r?\n/g, ' ') }}</p>
     </div>
 </template>
 

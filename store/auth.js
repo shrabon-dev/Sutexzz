@@ -1,8 +1,9 @@
+import { navigateTo } from "nuxt/app";
 import { defineStore } from "pinia";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    user: null,
+    user: null || process.client && JSON.parse(localStorage.getItem('user')),
     token: null,
   }),
 
@@ -24,6 +25,7 @@ export const useAuthStore = defineStore("auth", {
         if (response.token) {
           if (process.client) {
             localStorage.setItem("token", response.token);
+            localStorage.setItem("user", JSON.stringify(response.user));
           }
           this.token = response.token;
           this.user = response.user;
@@ -43,10 +45,23 @@ export const useAuthStore = defineStore("auth", {
       if (process.client) {
         localStorage.removeItem("token"); 
       }
-      console.log("User logged out");
-      return { message: "Logged out successfully" };
+      return  navigateTo('/login');
     },
+    async fetchUser() {
+      const token = localStorage.getItem("token");
+      if (!token) return;
 
+      const { data, error } = await $fetch("/api/auth/me", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (error.value) {
+        this.user = null;
+        return;
+      }
+
+      this.user = data.value; // ✅ Set authenticated user in state
+    },
     initUserFromLocalStorage() {
       if (process.client) {
         const token = localStorage.getItem("token");

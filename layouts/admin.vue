@@ -17,6 +17,12 @@
 import Footer from '../components/panel/Footer.vue';
 import Header from '../components/panel/Header.vue';
 import Sidebar from '../components/panel/Sidebar.vue';
+import { useAuthStore } from '~/store/auth';
 
+const authStore = useAuthStore();
+
+onMounted(() => {
+  authStore.fetchUser();
+});
  
 </script>

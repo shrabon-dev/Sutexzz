@@ -17,7 +17,7 @@
                <span class="w-24 h-24 rounded-full flex justify-center shadow-xl items-center text-base  font-poppin bg-blue-600/10 text-blue-300"> Premium </span>
              </div>
              <div class="btn text-lg pt-12 pb-6">
-                <nuxt-link class="bg-panel-text-light/20 px-4  py-2 font-poppin text-panel-text-light text-lg rounded duration-300 ease-in hover:bg-panel-text-light/50" to="/admin">Change your plan</nuxt-link>
+                <nuxt-link class="bg-panel-text-light/20 px-4  py-2 font-poppin text-panel-text-light text-sm rounded duration-300 ease-in hover:bg-panel-text-light/50" to="/admin">Change your plan</nuxt-link>
              </div>       
           </div>
         </div>    

@@ -1,9 +1,6 @@
 <template>
   <div class="w-full  bg-panel-dark text-9xl rounded-lg p-6">
-    <div class="breadcrumb flex gap-1 items-center pb-6">
-      <nuxt-link  class="font-inter text-base text-panel-sub-text" to="/admin">Dashboard</nuxt-link>
-      <p class="font-inter text-base text-panel-text-light"> / User list </p>
-    </div>
+    <Breadcrumb current="Dashbaord" />
     <div class="grid grid-cols-12 gap-5">
       <div class="col-span-8">
         <div class="card border border-panel-sub-text/50 rounded-lg p-4 shadow-lg">
@@ -289,6 +286,7 @@ import UserList from '../../components/panel/UserList.vue';
 import AccountPlan from '../../components/panel/AccountPlan.vue';
 import PostList from '../../components/panel/PostList.vue';
 import SubcriptionChart from '../../components/panel/SubcriptionChart.vue';
+import Breadcrumb from '../../components/panel/Breadcrumb.vue';
  definePageMeta({
   layout: 'admin',
   middleware: 'auth',

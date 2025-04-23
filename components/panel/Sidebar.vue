@@ -9,10 +9,15 @@
             <li class=""><nuxt-link to="/admin/profile" class="font-jost text-lg text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-4 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm bg-panel-sub-dark flex justify-center  items-center text-xl w-8  h-8 p-1" icon="mdi:bell-settings" /> Settings</nuxt-link></li>
             <li class=""><nuxt-link to="/admin/billing" class="font-jost text-lg text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-4 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm bg-panel-sub-dark flex justify-center  items-center text-xl w-8  h-8 p-1" icon="mdi:money" /> Billings</nuxt-link></li>
             <li class=""><nuxt-link to="/admin/user-list" class="font-jost text-lg text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-4 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm bg-panel-sub-dark flex justify-center  items-center text-xl w-8  h-8 p-1" icon="mdi:format-list-bulleted" /> Users</nuxt-link></li>
-            <li class=""><nuxt-link to="/" class="font-jost text-lg text-white font-light cursor-pointer flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-4 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm bg-panel-sub-dark flex justify-center  items-center text-xl w-8  h-8 p-1" icon="mdi:logout" /> Logout</nuxt-link></li>
+            <li class=""><nuxt-link   @click="auth.logout()" class="font-jost text-lg text-white font-light cursor-pointer flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-4 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm bg-panel-sub-dark flex justify-center  items-center text-xl w-8  h-8 p-1" icon="mdi:logout" /> Logout</nuxt-link></li>
         </ul>
     </aside>
 </template>
 <script setup>
+
 import { Icon } from '@iconify/vue';
+import { useAuthStore } from "@/store/auth";
+
+const auth = useAuthStore();
+
 </script>
