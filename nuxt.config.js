@@ -33,7 +33,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-03-16',
   modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt', 'nuxt-mongoose'],
   plugins: ['~/plugins/pinia.js','~/plugins/chart.js'],
-  
+  server: {
+    port: process.env.PORT || 10000,
+    host: '0.0.0.0'
+  },
   vite: {
     server: {
       hmr: {
