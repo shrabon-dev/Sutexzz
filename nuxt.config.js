@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  ssr: true,
   devtools: { enabled: true },
   css: ['~/assets/css/main.css','~/assets/css/transition.css'],
   mongoose: {
@@ -40,16 +41,16 @@ export default defineNuxtConfig({
       hmr: {
         protocol: 'ws', 
         host: 'localhost',
-        port: 3000,
+        port: 1000,
       },
     },
   },
   auth: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:1000",
     enableGlobalAppMiddleware: true,
   },
   axios: {
-    baseURL: 'http://localhost:3000',  
+    baseURL: 'http://localhost:1000',  
   },
   vgsap: {
     presets: [],
