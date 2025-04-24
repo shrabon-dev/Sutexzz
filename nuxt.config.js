@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  
   devtools: { enabled: true },
   css: ['~/assets/css/main.css','~/assets/css/transition.css'],
   mongoose: {
@@ -29,7 +28,6 @@ export default defineNuxtConfig({
    },
  
   },
-
   compatibilityDate: '2025-03-16',
   modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt', 'nuxt-mongoose'],
   plugins: ['~/plugins/pinia.js','~/plugins/chart.js'],
@@ -40,14 +38,14 @@ export default defineNuxtConfig({
   vite: {
     server: {
       hmr: {
-        protocol: 'ws', // Ensure it's using WebSocket
+        protocol: 'ws', 
         host: 'localhost',
         port: 3000,
       },
     },
   },
   auth: {
-    origin: "http://localhost:3000", // Your frontend URL
+    origin: "http://localhost:3000",
     enableGlobalAppMiddleware: true,
   },
   axios: {
@@ -58,5 +56,5 @@ export default defineNuxtConfig({
     breakpoint: 768,
     scroller: '',
     composable: true
-}
+  }
 });
