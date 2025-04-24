@@ -52,6 +52,7 @@ export default defineNuxtConfig({
   axios: {
     baseURL: 'http://localhost:1000',  
   },
+  
   vgsap: {
     presets: [],
     breakpoint: 768,
