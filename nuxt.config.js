@@ -40,8 +40,8 @@ export default defineNuxtConfig({
     server: {
       hmr: {
         protocol: 'ws', 
-        host: 'localhost',
-        port: 1000,
+        host: '0.0.0.0',
+        port: 10000,
       },
     },
   },
@@ -52,7 +52,7 @@ export default defineNuxtConfig({
   axios: {
     baseURL: 'http://localhost:1000',  
   },
-  
+
   vgsap: {
     presets: [],
     breakpoint: 768,
