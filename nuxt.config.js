@@ -32,11 +32,12 @@ export default defineNuxtConfig({
   modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt', 'nuxt-mongoose'],
   plugins: ['~/plugins/pinia.js', '~/plugins/chart.js'],
 
-  // Server configuration
+ 
   server: {
     port: process.env.PORT,      // Use Render's assigned port
     host: '0.0.0.0'
   },
+
 
   // Remove or conditionally configure Vite HMR for production
   vite: {
