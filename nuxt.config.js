@@ -2,6 +2,13 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/css/transition.css'],
+   nitro: {
+    preset: 'node-server',
+    server: {
+      port: process.env.PORT || 4000, // Use the PORT environment variable
+      host: '0.0.0.0', // Bind to 0.0.0.0 for external access
+    },
+  },
   mongoose: {
     uri: process.env.MONGODB_URI,
     options: {},
@@ -51,12 +58,12 @@ export default defineNuxtConfig({
   },
 
   auth: {
-    origin: process.env.ORIGIN || "http://localhost:3000",
+    origin: process.env.ORIGIN || "http://localhost:4000",
     enableGlobalAppMiddleware: true,
   },
 
   axios: {
-    baseURL: process.env.BASE_URL || "http://localhost:3000",
+    baseURL: process.env.BASE_URL || "http://localhost:4000",
   },
 
   vgsap: {
