@@ -34,21 +34,19 @@ export default defineNuxtConfig({
 
  
   server: {
-    port: process.env.PORT,      // Use Render's assigned port
+    port: process.env.PORT || 4000,  
     host: '0.0.0.0'
   },
-
-
-  // Remove or conditionally configure Vite HMR for production
+ 
   vite: {
     server: {
       hmr: process.env.NODE_ENV === 'development'
         ? {
             protocol: 'ws',
             host: 'localhost',
-            port: 3000, // Local dev port
+            port: 4000,  
           }
-        : false, // Disable HMR in production
+        : false, 
     },
   },
 
