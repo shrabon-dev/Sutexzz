@@ -1,9 +1,9 @@
 <template>
-    <div class="grid grid-cols-12 p-5">
-        <div class="sidebar col-span-2 pr-5 relative w-full">
+    <div class="grid grid-cols-12 p-2 md:p-5">
+        <div class="sidebar col-span-2 hidden lg:block pr-5 relative w-full">
             <Sidebar />
         </div>
-        <div class="layouts  col-span-10 pb-5">
+        <div class="layouts col-span-12 lg:col-span-10 pb-5">
             <Header />
             <main>
                 <slot/>
