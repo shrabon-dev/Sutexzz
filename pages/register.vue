@@ -23,7 +23,7 @@
           </div>
         </form>
         <transition name="fade">
-          <p v-if="message" class="bg-blue-900 p-3 text-center text-white font-monts font-normal text-lg">
+          <p v-if="message" class="bg-blue-900 p-3 text-center text-white font-monts font-normal text-sm">
             <span class="text-yellow-400">!!</span> {{ message }} <span class="text-yellow-400">!!</span>
           </p>
         </transition>
