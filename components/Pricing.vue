@@ -15,7 +15,7 @@
                         <p  class="font-jost pt-1 font-light text-base  md:text-xs lg:text-base text-white"> {{ item.price_info  }}</p>
                     </div>
                     <ul  class="space-y-2">
-                        <li v-for="list in item.feature_lists" class="font-jost font-normal md:text-xs inline-flex w-[48%] md:w-full text-xs lg:text-xs xl:text-sm 2xl:text-base text-white md:flex items-start gap-1"><Icon class="text-2xl" icon="iconamoon:check-thin" /> {{ list }} </li>
+                        <li v-for="list in item.feature_lists" class="font-jost font-normal md:text-xs inline-flex   md:w-full text-xs lg:text-xs xl:text-sm 2xl:text-base text-white md:flex items-start gap-1"><Icon class="text-2xl" icon="iconamoon:check-thin" /> {{ list }} </li>
                     </ul>
                     <div class="text-center">
                         <button :class="[{'bg-btn border-2 border-transparent px-4 xl:px-10 py-1 xl:py-3 rounded-lg mt-10 mx-auto text-center font-jost text-base xl:text-xl text-white ':!item.reqomendet,'bg-btn border-2  px-4 xl:px-10 py-1 xl:py-3 rounded-lg mt-10 mx-auto text-center font-jost text-base xl:text-xl text-white':item.reqomendet}]">
