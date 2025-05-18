@@ -61,3 +61,8 @@ td{
     z-index: -1;
 }
 
+@layer components {
+    .icon_box{
+        @apply w-10 h-10 border border-transparent hover:border-panel-sub-text rounded-lg flex items-center justify-center bg-panel-sub-dark text-xl text-white cursor-pointer hover:text-panel-sub-text duration-300 ease-in-out
+    }
+}

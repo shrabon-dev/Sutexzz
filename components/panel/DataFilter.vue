@@ -1,16 +1,17 @@
 <template>
     <div class="filter_nav">
         <div class="bg-panel-sub-text/20 border-panel-sub-text/40 border-1 p-3 rounded">
-            <div class="flex justify-between items-center">
-                <div class="flex justify-between items-center gap-3">
+            <div class="sm:flex justify-between items-center">
+                <div class="justify-between items-center gap-3 hidden sm:flex">
                 <button class="bg-btn text-sm font-poppin text-white rounded px-3 flex gap-1 py-1 items-center"><Icon class="text-xl" icon="ant-design:sort-ascending-outlined" /> Sort By</button>
                 </div>
-                <div class="flex justify-between items-center gap-3">
+                <div class="flex justify-between flex-wrap items-center gap-3">
                 <button class="bg-btn text-base font-poppin text-white rounded py-1 px-3"><Icon class="text-lg" icon="uiw:printer" /></button>
+                <button class="bg-btn text-sm font-poppin text-white rounded px-3 flex gap-1 py-1 items-center sm:hidden"><Icon class="text-xl" icon="ant-design:sort-ascending-outlined" /> Sort By</button>
                 <button class="bg-btn text-base font-poppin text-white rounded py-1 px-3 "><Icon class="text-lg" icon="uiw:file-excel" /></button>
-                 <div class="brd bg-btn rounded overflow-hidden flex items-center gap-3">
+                 <div class="brd bg-btn rounded overflow-hidden flex justify-between items-center gap-1 lg:gap-3 w-full sm:w-fit">
                     <button class="bg-btn text-base font-poppin text-white rounded py-1 px-3 "><Icon class="text-lg" icon="uiw:left" /></button>
-                    <div class="bg-btn h-auto text-base font-poppin text-white rounded px-3 ">
+                    <div class="bg-btn h-auto flex gap-1 justify-between text-base font-poppin text-white rounded px-3 ">
                         <button class="text-sm px-1 py-1">1</button>
                         <button class="text-sm px-1 py-1">2</button>
                         <button class="text-sm px-1 py-1">...</button>
