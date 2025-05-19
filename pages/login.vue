@@ -6,8 +6,8 @@
          <form @submit.prevent="login" class="p-10">
            <input class="w-full bg-main mb-2 p-3 rounded-sm text-sm text-white placeholder:text-white placeholder:text-sm placeholder:font-inter" v-model="email" type="email" placeholder="Email" required />
            <input class="w-full bg-main mb-2 p-3 rounded-sm text-sm text-white placeholder:text-white placeholder:text-sm placeholder:font-inter" v-model="password" type="password" placeholder="Password" required />
-           <div class="btn flex gap-5 items-center mt-6">
-            <button class="py-2 px-10 cursor-pointer text-white text-lg font-inter font-medium bg-btn rounded-sm" type="submit">Login</button>
+           <div class="btn text-center  mt-6">
+            <button class="py-2 mb-1 px-10 cursor-pointer text-white text-sm md:text-lg font-inter font-medium bg-btn rounded-sm" type="submit">Login</button>
             <p class="text-sm text-main font-jost font-normal">If, you have no account! Please <nuxt-link class="text-btn" to="/register" >Sign up.</nuxt-link> <br> <nuxt-link class="text-orange-700" to="/register" >Forget Password?.</nuxt-link></p>
            </div>
          </form>

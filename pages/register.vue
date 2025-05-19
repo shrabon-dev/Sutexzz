@@ -14,8 +14,8 @@
                  v-model="form.email" type="email" placeholder="Email" required />
           <input class="w-full bg-main mb-2 p-3 rounded-sm text-sm text-white placeholder:text-white placeholder:text-sm placeholder:font-inter" 
                  v-model="form.password" type="password" placeholder="Password" required />
-          <div class="btn flex gap-5 items-center mt-6">
-            <button class="py-2 px-10 cursor-pointer text-white text-lg font-inter font-normal bg-btn rounded-sm" 
+          <div class="btn text-center  mt-6">
+            <button class="py-2 mb-1 px-10 cursor-pointer text-white text-sm md:text-lg font-inter font-normal bg-btn rounded-sm" 
                     type="submit">Create Account</button>
             <p class="text-sm text-main font-jost font-normal">
               If you have an account! Please <nuxt-link class="text-btn" to="/login">login.</nuxt-link>
