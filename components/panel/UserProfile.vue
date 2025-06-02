@@ -3,10 +3,10 @@
             <div class="col-span-6">
               <ProfileCard/>
             </div>
-            <div class="col-span-3">
+            <div class="col-span-6 lg:col-span-3">
               <ProfileAccountStatus/>
             </div>
-            <div class="col-span-3">
+            <div class="col-span-12 lg:col-span-3">
               <NeedHelp/>
             </div>
             <div class="col-span-12">
