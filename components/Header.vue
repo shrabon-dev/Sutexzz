@@ -1,5 +1,5 @@
 <template>
-    <header :class="['px-4 w-full z-[999999]', isScrolled ? 'fixed bg-main border-b py-4 border-white/10' : 'absolute py-10 bg-transparent']">
+    <header :class="['px-4 w-full z-[99999999]', isScrolled ? 'fixed bg-main border-b py-4 border-white/10 z-[99999999]' : 'absolute py-10 bg-transparent z-[99999999]']">
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div class="logo">
