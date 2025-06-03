@@ -8,6 +8,7 @@
 @theme {
     --color-main: #222b2a;
     --color-btn: #398378;
+    --color-brdr: #b48b69;
     --breakpoint-xs: 300px;
     --breakpoint-xsm: 500px;
     --color-panel-dark: #2C3930;
