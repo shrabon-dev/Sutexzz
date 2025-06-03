@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
         <!-- Profile Picture Upload -->
-      <div class="flex items-center  md:col-span-6 lg:col-span-12 space-x-6  bg-panel-dark rounded-md mb-20">
+      <div class="flex items-center  md:col-span-6 lg:col-span-12 space-x-6  bg-panel-dark rounded-md mb-10">
         <div class="w-32 h-32">
          <!-- Show preview image if uploaded -->
           <img
