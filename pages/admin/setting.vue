@@ -2,12 +2,22 @@
   <div class="settings-page min-h-screen">
      <Breadcrumb current="User Setting" />
 
-    <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5">
+    <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
         <!-- Profile Picture Upload -->
       <div class="flex items-center  md:col-span-6 lg:col-span-12 space-x-6  bg-panel-dark rounded-md mb-20">
         <div class="w-32 h-32">
+         <!-- Show preview image if uploaded -->
           <img
-            :src="preview || user.profileImage"
+            v-if="preview"
+            :src="preview" 
+            alt="Profile"
+            class="w-full h-full object-cover rounded-sm border border-gray-300 dark:border-gray-600"
+          />
+
+          <!-- Fallback default image -->
+          <img
+            v-else
+            src="/assets/image/pfl.jpg" 
             alt="Profile"
             class="w-full h-full object-cover rounded-sm border border-gray-300 dark:border-gray-600"
           />
@@ -72,7 +82,7 @@ const user = ref({
   phone: '+123456789',
   dob: '1992-01-01',
   gender: 'Male',
-  profileImage: '/', // fallback image
+  profileImage: `/assets/image/pfl.jpg`, // fallback image
 })
 
 const preview = ref(null)
