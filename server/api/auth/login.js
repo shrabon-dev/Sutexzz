@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
       expiresIn: "1h",
     });
 
-    return { token, user: { id: user._id, username: user.username, email: user.email } };
+    return { token, user: user };
   } catch (error) {
     console.error("Login error:", error);
     throw createError({ statusCode: 500, statusMessage: "Internal Server Error" });

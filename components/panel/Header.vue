@@ -30,7 +30,7 @@
                     <li class=" hidden lg:inline-block" ><nuxt-link to="/admin" class="text-panel-sub-text font-jost  text-sm xl:text-base"> Upgrade 4.5.6 </nuxt-link></li>
                     <li @mouseenter="hoverState.profile = true"
                     @mouseleave="hoverState.profile = false" class="flex items-center gap-1 lg:gap-5 cursor-pointer relative" >
-                        <span class="font-jost  text-sm xl:text-base  hidden lg:inline-block">{{ user['username'] }}</span> 
+                        <span class="font-jost  text-sm xl:text-base  hidden lg:inline-block">{{ user['fullName'] }}</span> 
                         <span class=" block overflow-hidden"><img class="w-12 h-12 rounded-full border-panel-sub-dark border-4 object-cover" src="/assets/image/pfl.jpg" alt="profle"></span>
                         <DMenus :isHovered="hoverState.profile">
                             <li class=""><nuxt-link to="/admin" class="font-jost  text-sm xl:text-base text-white font-light flex gap-2 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-2 border-transparent hover:border-panel-sub-text"> <span class="block w-2 h-2 bg-panel-sub-dark rounded-full"></span>   Profile</nuxt-link></li>
@@ -71,7 +71,7 @@ const toggleFullscreen = () => {
   }
 };
 
-// ✅ Correct way to use Pinia
+ 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);
 

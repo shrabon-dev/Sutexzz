@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-700 pb-2">
+  <div class="flex justify-between items-center border-b border-brdr/25 dark:border-gray-700 pb-2">
     <span class="text-sm text-panel-text-light dark:text-gray-400">{{ label }}</span>
 
     <span
@@ -23,41 +23,45 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useAuthStore } from '../../store/auth'
 
-// Props
 const props = defineProps({
-  label: String,
-  value: String,
+  label: String, 
+  field: String,  
+  value: String, 
+  userId: String  
 })
 
-// Local state
 const isEditing = ref(false)
 const editedValue = ref(props.value)
+const authStore = useAuthStore();
+const emit = defineEmits(['update-value'])
 
-// Methods
 function enableEditing() {
   isEditing.value = true
 }
 
-function saveChanges() {
+async function saveChanges() {
   isEditing.value = false
 
-  // 🔄 Optionally emit the change
   emit('update-value', {
-    label: props.label,
+    field: props.field,
     value: editedValue.value,
-  })
+  })   
 
-  // ✅ OR: call an API/method to update via Mongoose backend
-  // await $fetch('/api/update-field', {
-  //   method: 'POST',
-  //   body: {
-  //     label: props.label,
-  //     value: editedValue.value,
-  //   },
-  // })
+  try {
+    const res = await $fetch(`/api/User/${props.userId}`, {
+      method: 'PUT',
+      body: {
+        [props.field]: editedValue.value,
+      },
+    })
+     await authStore.updateUserField(props.field, res)
+  } catch (err) {
+    console.error(`❌ Failed to update ${props.field}:`, err)
+  }
 }
 
-const emit = defineEmits(['update-value'])
+ 
 </script>

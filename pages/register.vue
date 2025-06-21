@@ -53,7 +53,7 @@ export default {
       const auth = useAuthStore();
       try {
         const response = await auth.register({
-          username: this.form.name,
+          fullName: this.form.name,
           phone: this.form.phone,
           email: this.form.email,
           password: this.form.password

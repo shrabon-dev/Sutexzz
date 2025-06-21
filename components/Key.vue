@@ -3,8 +3,9 @@
       <div class="container mx-auto">
         <Title key_t="Key Aspect" title="Get complete visibility and control" description="Projectile helps you collaborate more smoothly and communicate better. Projectile helps you collaborate more smoothly and communicate better." />
       
-        <div  v-gsap.from="{ opacity:0, y: 320 }" class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
+        <div class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
           <div
+            v-gsap.whenVisible.from="{ opacity:0, y: 100, scale:.1,duration:2  }"
             v-for="(item, index) in items"
             :key="index"
             :class="[

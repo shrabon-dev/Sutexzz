@@ -1,6 +1,15 @@
 // server/api/me.js
 export default defineEventHandler((event) => {
-    console.log('event:' + event)
-    return event.context.authUser;
-  });
-  
+  const user = event.context.authUser;
+
+  if (!user) {
+    return {
+      user: null,
+      error: 'Unauthorized',
+    };
+  }
+
+  return {
+    user,
+  };
+});

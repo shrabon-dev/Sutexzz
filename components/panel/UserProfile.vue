@@ -15,9 +15,11 @@
         </div> 
 </template>
 <script setup>
+import { useAuthStore } from '../../store/auth';
 import NeedHelp from './utils/NeedHelp.vue';
 import ProfileAccountStatus from './utils/ProfileAccountStatus.vue';
 import ProfileCard from './utils/ProfileCard.vue';
 import ProfilePersonalInfo from './utils/ProfilePersonalInfo.vue';
+
 
 </script>

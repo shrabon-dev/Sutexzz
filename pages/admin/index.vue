@@ -8,8 +8,8 @@
              <div class="w-full mb-3 lg:mb-0 lg:w-[49%]  p-2 md:p-5 border border-panel-text-light/20 rounded">
                 <div class="title flex items-center justify-between  bg-panel-text-light/5 rounded-lg p-2 mb-2">
                   <div class="tl_lft">
-                    <h6 class="font-jost  text-base 2xl:text-lg  text-panel-text-light">Category List</h6>
-                    <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All category lists</p>
+                    <h6 class="font-jost  text-base 2xl:text-lg  text-panel-text-light">Recent Projects</h6>
+                    <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All Recent Projects</p>
                   </div>
                   <div class="actn">
                     <Icon class="text-panel-sub-text text-3xl cursor-pointer duration-300 ease-in-out hover:text-panel-text-light" icon="mynaui:dots-vertical-circle"/>
@@ -113,8 +113,8 @@
              <div class="w-full  lg:w-[49%]  p-2 md:p-5 border border-panel-text-light/20 rounded">
                 <div class="title flex items-center justify-between  bg-panel-text-light/5 rounded-lg p-2 mb-2">
                   <div class="tl_lft">
-                    <h6 class="font-jost  text-base 2xl:text-lg  text-panel-text-light">Sub Category List</h6>
-                    <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All sub category lists</p>
+                    <h6 class="font-jost  text-base 2xl:text-lg  text-panel-text-light">Pending Invoices</h6>
+                    <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All Pending Invoices</p>
                   </div>
                   <div class="actn">
                     <Icon class="text-panel-sub-text text-3xl cursor-pointer duration-300 ease-in-out hover:text-panel-text-light" icon="mynaui:dots-vertical-circle"/>

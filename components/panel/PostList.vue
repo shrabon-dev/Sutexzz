@@ -4,8 +4,8 @@
           <div class="w-full ">
               <div class="title flex items-center justify-between  bg-panel-text-light/5 rounded-lg p-2 mb-2">
                 <div class="tl_lft">
-                  <h6 class="font-jost text-base 2xl:text-lg text-panel-text-light">Post List</h6>
-                  <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All post lists</p>
+                  <h6 class="font-jost text-base 2xl:text-lg text-panel-text-light">New Clients/Leads</h6>
+                  <p class="font-jost text-xs 2xl:text-sm text-panel-sub-text">All New Clients/Leads</p>
                 </div>
                 <div class="actn">
                   <Icon class="text-panel-sub-text text-3xl cursor-pointer duration-300 ease-in-out hover:text-panel-text-light" icon="mynaui:dots-vertical-circle"/>

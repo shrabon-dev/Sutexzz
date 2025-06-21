@@ -51,7 +51,7 @@ export const useAuthStore = defineStore("auth", {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const { data, error } = await $fetch("/api/auth/me", {
+      const { user , error } = await $fetch("/api/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -60,7 +60,12 @@ export const useAuthStore = defineStore("auth", {
         return;
       }
 
-      this.user = data.value; // ✅ Set authenticated user in state
+      this.user = user;  
+    },
+    async updateUserField(field, res) {
+      
+      this.user[field] = res[field] 
+      localStorage.setItem('user', JSON.stringify(this.user))
     },
     initUserFromLocalStorage() {
       if (process.client) {
