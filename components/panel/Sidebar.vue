@@ -1,5 +1,5 @@
 <template>
-    <aside class="bg-panel-dark p-5 lg:p-10 text-white border-panel-sub-dark rounded-lg h-screen fixed w-fit">
+    <aside class="bg-panel-dark p-5 lg:p-5 text-white border-panel-sub-dark rounded-lg h-screen fixed w-fit">
         <div class="cmpny rounded-lg mb-10 bg-panel-sub-dark p-3 xl:p-5">
             <nuxt-link to="/" class="flex justify-between"><img class="w-24 md:w-14 xl:w-20 2xl:w-32" src="/assets/image/logo.png" alt=""> <span class="font-jost text-xs md:text-[8px] 2xl:text-sm text-panel-sub-text">V_3.6.5</span></nuxt-link>
         </div>
