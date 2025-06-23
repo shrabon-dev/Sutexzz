@@ -4,8 +4,7 @@
     --font-inter: "Inter", serif;
     --font-jost: "Jost", serif;
     --font-poppin: "Poppins", sans-serif;
-}
-@theme {
+ 
     --color-main: #222b2a;
     --color-btn: #398378;
     --color-brdr: #b48b69;
@@ -37,7 +36,6 @@ td{
     padding: 10px 0 !important;
 }
  
-
 .fture_box .item:hover:after {
     opacity: .5;
 }
@@ -61,9 +59,15 @@ td{
     opacity: 0;
     z-index: -1;
 }
-
+option{
+    background: #b48b69;
+}
 @layer components {
     .icon_box{
         @apply w-10 h-10 border border-transparent hover:border-panel-sub-text rounded-lg flex items-center justify-center bg-panel-sub-dark text-xl text-white cursor-pointer hover:text-panel-sub-text duration-300 ease-in-out
     }
+    .input_style {
+        @apply w-full px-3 py-2 rounded-md   border border-brdr/40 text-panel-text-light placeholder:text-gray-400 focus:outline-none
+    }
 }
+ 

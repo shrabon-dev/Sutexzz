@@ -12,7 +12,7 @@ export default defineEventHandler(async (event)=>{
 
     if(req == 'GET'){
         try{
-            const data = model.findById(id);
+            const data = model.get();
             return data;
         }catch(error){
             return error;
