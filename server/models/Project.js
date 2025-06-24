@@ -1,12 +1,11 @@
-// models/Project.js
-
 import mongoose from 'mongoose'
 
 const projectSchema = new mongoose.Schema(
   {
-    freelancerId: {
-      type: String,
-      required: true,
+    freelancerId: { 
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User', 
+      required: true
     },
     projectTitle: {
       type: String,

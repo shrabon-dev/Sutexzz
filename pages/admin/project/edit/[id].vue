@@ -1,15 +1,20 @@
 <template>
   <div class="settings-page min-h-screen">
-    <Breadcrumb current="Project Management" />
+    <Breadcrumb current="Edit Project" />
 
     <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
       <section
         class="border-panel-sub-text/20 col-span-12 border dark:bg-panel-dark rounded-xl p-6 shadow-md"
       >
-        <h2 class="text-xl border-b border-brdr/20 pb-2 text-panel-text-light font-semibold mb-10"><Icon icon="material-symbols-light:add-chart-outline" class="text-3xl inline-block"/> Create Project</h2>
+        <h2 class="text-xl border-b border-brdr/20 pb-2 text-panel-text-light font-semibold mb-10"><Icon icon="material-symbols-light:add-chart-outline" class="text-3xl inline-block"/> Edit Project</h2>
 
-        <div class="flex gap-10 w-full">
-          <!-- Left Column -->
+        <div v-if="loadingProjectData" class="text-panel-text-light text-center py-10">
+          Loading project details...
+        </div>
+        <div v-else-if="!form.projectTitle" class="text-panel-text-light text-center py-10">
+          Project not found or an error occurred.
+        </div>
+        <div v-else class="flex gap-10 w-full">
           <div class="w-1/2 pr-5 flex flex-col gap-4">
             <label class="text-sm font-medium text-panel-text-light">Project Title</label>
             <input type="text" class="input_style" v-model="form.projectTitle" placeholder="Enter project title" />
@@ -52,7 +57,6 @@
             <input type="date" class="input_style" v-model="form.startDate" />
           </div>
 
-          <!-- Right Column -->
           <div class="w-1/2 flex flex-col gap-4">
             <label class="text-sm font-medium text-panel-text-light">Due Date</label>
             <input type="date" class="input_style" v-model="form.dueDate" />
@@ -96,10 +100,10 @@
         </div>
 
         <button
-          @click="createProject"
+          @click="updateProject"
           class="text-sm bg-panel-sub-text py-1 px-4 font-medium rounded-sm border border-brdr text-panel-text-light font-jost cursor-pointer mt-5"
         >
-          Save Changes
+          Update Project
         </button>
       </section>
     </div>
@@ -112,27 +116,29 @@ definePageMeta({
   middleware: 'auth',
 })
 import { Icon } from '@iconify/vue';
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import Breadcrumb from '~/components/panel/Breadcrumb.vue'
 import { useAuthStore } from '~/store/auth'
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';  
 
 const authStore = useAuthStore()
 const user = computed(() => authStore.user)
 const preview = ref(null)
-const router = useRouter();
-let pcode =  'PRJ-' + Math.floor(1000 + Math.random() * 9000);
+const route = useRoute(); 
+const router = useRouter(); 
 
-// Removed isValidObjectId helper function as ObjectIds are no longer required for clientUsername, assignedTeam, projectManager.
-// 🧠 Project Form
+const projectId = route.params.id; 
+const loadingProjectData = ref(true); 
+
 const form = ref({
+  freelancerId: null,
   projectTitle: '',
-  projectCode: pcode,
+  projectCode: '',  
   description: '',
   industry: '',
   status: 'draft',
   clientUsername: '',
-  assignedTeam: '', // Comma-separated string of User IDs
+  assignedTeam: '',
   projectManager: '',
   startDate: '',
   dueDate: '',
@@ -143,33 +149,59 @@ const form = ref({
   internalNotes: '',
   timezone: 'UTC',
   language: 'en'
-})
+});
 
+watch(user, (newUser) => {
+  if (newUser && newUser._id && !form.value.freelancerId) {
+    form.value.freelancerId = newUser._id;
+  }
+}, { immediate: true });
 
-
-onMounted(() => {
- 
+onMounted(async () => {
   if (!authStore.user) {
-    authStore.fetchUser().then(() => {
-      if (user.value && user.value._id) {
-        // Set clientUsername and projectManager from fetched user ID
-        // No ObjectId validation needed here since schema now accepts strings
-        form.value.clientUsername = user.value._id;
-        form.value.projectManager = user.value._id;
-      }
-    });
+    await authStore.fetchUser();
+  }
+
+  if (projectId) {
+    await fetchProjectDetails(projectId);
   } else {
-    if (user.value && user.value._id) {
-      // Set clientUsername and projectManager from existing user ID
-      // No ObjectId validation needed here since schema now accepts strings
-      form.value.projectManager = user.value.username;
-    }
+    loadingProjectData.value = false;
+    alert('No project ID provided for editing.');
+    router.back(); 
   }
 
   if (!form.value.timezone) {
     form.value.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
-})
+});
+
+const fetchProjectDetails = async (id) => {
+  try {
+    loadingProjectData.value = true;
+    const response = await $fetch(`/api/query/update/Project/${id}`); // Fetch a single project
+    console.log('Fetched project details:', response.data);
+    if (response.data) {
+      // Map fetched data to form. Ensure date formats are compatible with input type="date"
+      form.value = {
+        ...response.data,
+        assignedTeam: response.data.assignedTeam ? response.data.assignedTeam.join(', ') : '', // Convert array back to comma-separated string
+        startDate: response.data.startDate ? new Date(response.data.startDate).toISOString().split('T')[0] : '',
+        dueDate: response.data.dueDate ? new Date(response.data.dueDate).toISOString().split('T')[0] : '',
+        // Ensure freelancerId is set for the form, although not editable
+        freelancerId: response.data.freelancerId || user.value?._id,
+      };
+    } else {
+      alert('Project not found.');
+      router.back(); // Go back if project not found
+    }
+  } catch (error) {
+    console.error('Error fetching project details:', error);
+    alert('Failed to load project details.');
+    router.back();
+  } finally {
+    loadingProjectData.value = false;
+  }
+};
 
 const onFileChange = (event) => {
   const file = event.target.files[0]
@@ -182,69 +214,48 @@ const onFileChange = (event) => {
   }
 }
 
-const createProject = async () => {
+const updateProject = async () => {
   try {
-    // Removed ObjectId validation for clientUsername and projectManager
-    // as the schema now accepts string types for these fields.
+    console.log('update project id: ',projectId)
+    if (!form.value.freelancerId) {
+      alert('Error: User ID (freelancerId) is not available. Cannot update project.');
+      return;
+    }
+    if (!projectId) {
+      alert('Error: Project ID is missing for update operation.');
+      return;
+    }
 
-    // Process assignedTeam: split the string into an array of strings.
-    // No ObjectId validation/filtering needed here.
     const assignedTeamArray = form.value.assignedTeam
       .split(',')
       .map(id => id.trim())
-      .filter(id => id !== ''); // Still filter out empty strings to avoid empty array elements
+      .filter(id => id !== '');
 
     const payload = {
       ...form.value,
-      assignedTeam: assignedTeamArray, // Use the array of strings
-      startDate: form.value.startDate,
-      dueDate: form.value.dueDate,
-      freelancerId: user.value?._id,
-      projectCode: pcode,
+      assignedTeam: assignedTeamArray,
     };
 
-    // Remove empty values for optional fields if not set, to avoid Mongoose validation errors
-    if (!payload.projectCode) delete payload.projectCode;
     if (payload.budgetAmount === null) delete payload.budgetAmount;
     if (payload.hourlyRate === null) delete payload.hourlyRate;
     if (!payload.internalNotes) delete payload.internalNotes;
     if (!payload.contractId) delete payload.contractId;
     if (!payload.files || payload.files.length === 0) delete payload.files;
 
-    const response = await $fetch(`/api/project`, {
-      method: 'POST',
+    console.log('Payload for update:', payload);
+
+    const response = await $fetch(`/api/query/update/Project/${projectId}`, {   
+      method: 'PUT', 
       body: payload,
     });
 
-    console.log('Freelancer created:', response);
-    console.log('Project created:', response);
-    // alert('✅ Project created successfully!');
-
-    // Reset the form after successful submission
-    form.value = {
-      projectTitle: '',
-      projectCode: pcode = 'PRJ-' + Math.floor(1000 + Math.random() * 9000),
-      description: '',
-      industry: '',
-      status: 'draft',
-      clientUsername: '', // Reset with user ID or empty string
-      assignedTeam: '',
-      projectManager: user.value?.username || '', // Reset with user ID or empty string
-      startDate: '',
-      dueDate: '',
-      budgetAmount: null,
-      currency: 'USD',
-      billingType: 'fixed',
-      hourlyRate: null,
-      internalNotes: '',
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      language: 'en'
-    };
-    preview.value = null; // Clear file preview
+    console.log('Project updated:', response);
+    alert('✅ Project updated successfully!');
+    router.push('/admin/project/list');  
 
   } catch (error) {
-    console.error('Failed to create project:', error);
-    let errorMessage = '❌ Failed to create project.';
+    console.error('Failed to update project:', error);
+    let errorMessage = '❌ Failed to update project.';
     if (error.data && error.data.detail) {
       errorMessage += ` Details: ${error.data.detail}`;
     } else if (error.message) {
@@ -252,5 +263,5 @@ const createProject = async () => {
     }
     alert(errorMessage);
   }
-}
+};
 </script>
