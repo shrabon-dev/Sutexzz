@@ -1,6 +1,7 @@
 <template>
   <div class="settings-page min-h-screen">
     <Breadcrumb current="Project Management" />
+ 
 
     <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
       <section
@@ -11,7 +12,7 @@
         <div class="flex gap-10 w-full">
           <!-- Left Column -->
           <div class="w-1/2 pr-5 flex flex-col gap-4">
-            <label class="text-sm font-medium text-panel-text-light">Project Title</label>
+            <label class="text-sm font-medium text-panel-text-light">  Project Title</label>
             <input type="text" class="input_style" v-model="form.projectTitle" placeholder="Enter project title" />
 
             <label class="text-sm font-medium text-panel-text-light">Project Code</label>
@@ -101,6 +102,7 @@
         >
           Save Changes
         </button>
+       
       </section>
     </div>
   </div>
@@ -116,14 +118,39 @@ import { ref, computed, onMounted } from 'vue'
 import Breadcrumb from '~/components/panel/Breadcrumb.vue'
 import { useAuthStore } from '~/store/auth'
 import { useRouter } from 'vue-router';
+import { useNuxtApp } from 'nuxt/app';
+import 'sweetalert2/dist/sweetalert2.min.css'
+
+const { $swal } = useNuxtApp()
+
+const showAlert = ({value,type}) => {
+  const Toast = $swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.style.zIndex = 9999999;
+      toast.onmouseenter = Toast.stopTimer;
+      toast.onmouseleave = Toast.resumeTimer;
+    }
+  });
+
+  Toast.fire({
+    icon: type,
+    title: value,
+  });
+};
+
+
 
 const authStore = useAuthStore()
 const user = computed(() => authStore.user)
+console.log('user :', user)
 const preview = ref(null)
 const router = useRouter();
 let pcode =  'PRJ-' + Math.floor(1000 + Math.random() * 9000);
-
-// Removed isValidObjectId helper function as ObjectIds are no longer required for clientUsername, assignedTeam, projectManager.
 // 🧠 Project Form
 const form = ref({
   projectTitle: '',
@@ -144,8 +171,7 @@ const form = ref({
   timezone: 'UTC',
   language: 'en'
 })
-
-
+ 
 
 onMounted(() => {
  
@@ -171,16 +197,20 @@ onMounted(() => {
   }
 })
 
-const onFileChange = (event) => {
-  const file = event.target.files[0]
-  if (file) {
-    const reader = new FileReader()
-    reader.onload = (e) => {
-      preview.value = e.target.result
-    }
-    reader.readAsDataURL(file)
-  }
-}
+// const onFileChange = (event) => {
+
+//   event.preventDefault();
+  
+//   const file = event.target.files[0]
+//   if (file) {
+//     const reader = new FileReader()
+//     reader.onload = (e) => {
+//       preview.value = e.target.result
+//     }
+//     reader.readAsDataURL(file)
+//   }
+// }
+ 
 
 const createProject = async () => {
   try {
@@ -216,31 +246,33 @@ const createProject = async () => {
       body: payload,
     });
 
-    console.log('Freelancer created:', response);
+    console.log('Freelancer created:', response.statusCode);
     console.log('Project created:', response);
-    // alert('✅ Project created successfully!');
-
-    // Reset the form after successful submission
-    form.value = {
-      projectTitle: '',
-      projectCode: pcode = 'PRJ-' + Math.floor(1000 + Math.random() * 9000),
-      description: '',
-      industry: '',
-      status: 'draft',
-      clientUsername: '', // Reset with user ID or empty string
-      assignedTeam: '',
-      projectManager: user.value?.username || '', // Reset with user ID or empty string
-      startDate: '',
-      dueDate: '',
-      budgetAmount: null,
-      currency: 'USD',
-      billingType: 'fixed',
-      hourlyRate: null,
-      internalNotes: '',
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      language: 'en'
-    };
-    preview.value = null; // Clear file preview
+    if(response.statusCode == 500){
+      showAlert({type:'error',value:response.body.error});
+    }else{
+      form.value = {
+        projectTitle: '',
+        projectCode: pcode = 'PRJ-' + Math.floor(1000 + Math.random() * 9000),
+        description: '',
+        industry: '',
+        status: 'draft',
+        clientUsername: '', // Reset with user ID or empty string
+        assignedTeam: '',
+        projectManager: user.value?.username || '', // Reset with user ID or empty string
+        startDate: '',
+        dueDate: '',
+        budgetAmount: null,
+        currency: 'USD',
+        billingType: 'fixed',
+        hourlyRate: null,
+        internalNotes: '',
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: 'en'
+      };
+      preview.value = null;
+      showAlert({type:'success',value:'Create A New Project'});
+    }
 
   } catch (error) {
     console.error('Failed to create project:', error);
@@ -251,6 +283,7 @@ const createProject = async () => {
       errorMessage += ` Details: ${error.message}`;
     }
     alert(errorMessage);
-  }
+  } 
 }
 </script>
+ 

@@ -2,12 +2,13 @@ import { navigateTo } from "nuxt/app";
 import { defineStore } from "pinia";
 
 export const useAuthStore = defineStore("auth", {
-  state: () => ({
-    user: null || process.client && JSON.parse(localStorage.getItem('user')),
-    token: null,
-  }),
+    state: () => ({
+      user: process.client ? JSON.parse(localStorage.getItem('user') || 'null') : null,
+      token: null
+    }),
 
-  actions: {
+    actions: {
+   
     async register(data) {
       try {
         const res = await $fetch("/api/auth/register", { method: "POST", body: data });
@@ -48,19 +49,21 @@ export const useAuthStore = defineStore("auth", {
       return  navigateTo('/login');
     },
     async fetchUser() {
-      const token = localStorage.getItem("token");
-      if (!token) return;
+        if (process.client) {
+            const token = localStorage.getItem('token')
+            if (!token) return
+            try {
+              const data = await $fetch('/api/auth/me', {
+                headers: { Authorization: `Bearer ${token}` }
+              })
 
-      const { user , error } = await $fetch("/api/auth/me", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      if (error.value) {
-        this.user = null;
-        return;
-      }
-
-      this.user = user;  
+              // If the API sends `{ user: {...} }` keep the line below,
+              // otherwise store the whole object.
+              this.user = data.user ?? data           // ← key change
+            } catch {
+              this.user = null
+            }
+          }
     },
     async updateUserField(field, res) {
       
@@ -77,3 +80,20 @@ export const useAuthStore = defineStore("auth", {
     }
   },
 });
+// async fetchUser () {
+//   if (process.client) {
+//     const token = localStorage.getItem('token')
+//     if (!token) return
+//     try {
+//       const data = await $fetch('/api/auth/me', {
+//         headers: { Authorization: `Bearer ${token}` }
+//       })
+
+//       // If the API sends `{ user: {...} }` keep the line below,
+//       // otherwise store the whole object.
+//       this.user = data.user ?? data           // ← key change
+//     } catch {
+//       this.user = null
+//     }
+//   }
+// }

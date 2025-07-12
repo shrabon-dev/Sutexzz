@@ -7,10 +7,10 @@
             <div class="title text-left pb-16">
               <span  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Features</span>
               <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="text-white font-inter font-bold text-xl md:text-4xl">
-                We are Integrated with industry best service providers
+                Built for busy freelancers who want more freedom, not more tools
               </h4>
               <p  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="font-jost text-sm md:text-xl text-white font-light pt-4 md:pt-10">
-                Projectile helps you collaborate more smoothly and communicate better.
+              Everything in one place to streamline your entire workflow.
               </p>
             </div>
           </div>
@@ -22,33 +22,33 @@
           >
             <FeatureItem   
               icon="ri:quill-pen-ai-fill"
-              title="Customer management"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Client CRM "
+              description="Organize client details, notes, and communication threads."
             />
             <FeatureItem
               icon="ri:pen-nib-fill"
-              title="Scheduling"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Smart Scheduling"
+              description="Let clients book meetings automatically with your calendar."
             />
             <FeatureItem
               icon="ri:mastercard-fill"
-              title="Quotes and estimates"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Proposals & Estimates"
+              description="Send branded proposals with e-signature support."
             />
             <FeatureItem
               icon="ri:bank-card-fill"
-              title="Credit card payment"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Invoices & Payments"
+              description="Generate invoices and get paid via Stripe, PayPal, and bank transfers."
             />
             <FeatureItem
               icon="iconamoon:badge-fill"
-              title="Referrals and reviews"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Task & Project Tracking"
+              description="Track project milestones and to-dos with clients."
             />
             <FeatureItem
               icon="iconamoon:invoice-fill"
-              title="Billing and invoicing"
-              description="Monitor progress against your plans and address deviations faster."
+              title="Time Tracking "
+              description="Log billable hours for tasks and export them to invoices."
             />
           </div>
         </div>

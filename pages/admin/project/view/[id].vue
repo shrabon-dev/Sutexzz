@@ -2,8 +2,124 @@
   <div class="settings-page min-h-screen">
     <Breadcrumb current="View Project" />
 
-    <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
-      <section
+    <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-xl">
+       <div class="col-span-12 border border-panel-text-light/20 rounded-xl p-2">
+           <div class="navs">
+            <ul class="flex items-center">
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text" to="/">Overview</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Budget</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Users</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Activity</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Settings</nuxt-link></li>
+            </ul>
+           </div>
+       </div>
+        <!-- owner Profile -->
+       <div class="col-span-4">
+        <ProjectOwnerCard
+        project-title="Blog Content Strategy & Writing"
+        project-description="Creating engaging blog content for a new startup in the wellness niche."
+        client-name="Wellness Hub"
+        freelancer-name="Emily White"
+        start-date="2025-06-25"
+        industry="Content Marketing"
+        :required-skills="['Copywriting', 'SEO', 'Content Strategy']"
+        contact-email="emily.w@example.com"
+      />
+       </div>
+       <div class="top col-span-8">
+        <div class="bg-panel-ddark/0 border border-panel-text-light/20 rounded-xl p-5">
+          <h2 class="font-medium text-4xl text-panel-text-light font-jost flex gap-5 items-center mb-10"><Icon icon="mingcute:flash-fill"/> {{ form.projectTitle }}</h2>
+          <div class="flex flex-wrap items-stretch">
+            <div class="w-3/5">
+              <div class="flex flex-wrap">
+                  <div class="w-1/3 p-2">
+                    <div class="sml_crd h-full border-2 p-4 rounded-xl bg-panel-sub-dark border-panel-sub-dark">
+                        <div class="status text-center h-full">
+                          <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-block rounded-full px-3 py-1">Status</h6>
+                          <p  class="font-jost text-lg font-medium capitalize text-panel-text-light pt-3 flex gap-3 justify-center items-center">{{ form.status }}
+                          <span class="font-jost text-sm shadow-2xl border border-violet-500 bg-violet-700  text-violet-100 inline-flex w-10 h-10 justify-center items-center rounded-full">57%</span>
+                          </p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="w-1/3 p-2">
+                    <div class="sml_crd h-full border-2 p-4 rounded-xl bg-panel-sub-dark border-panel-sub-dark">
+                      <div class="task h-full text-center">
+                        <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-block rounded-full px-3 py-1">Total Task</h6>
+                        <h6 class="font-jost text-lg font-bold text-panel-text-light pt-3">15/56</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/3 p-2">
+                    <div class="sml_crd h-full border-2  p-4 rounded-xl bg-panel-sub-dark border-panel-sub-dark">
+                      <div class="task h-full text-center">
+                        <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-block rounded-full px-3 py-1">Due Date</h6>
+                        <h6 class="font-jost text-lg font-bold text-panel-text-light pt-3">{{ form.dueDate }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 p-2">
+                    <div class="sml_crd h-full border-2  p-4 rounded-xl bg-panel-sub-dark border-panel-sub-dark">
+                      <div class="task h-full text-center">
+                        <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-block rounded-full px-3 py-1">Budget Spent</h6>
+                        <h6 class="font-jost text-lg font-bold text-panel-text-light pt-3">BDT: {{ form.budgetAmount }} TK.</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-1/2 p-2">
+                    <div class="sml_crd h-full  p-4 rounded-xl bg-panel-sub-dark">
+                      <div class="task h-full text-center">
+                        <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-block rounded-full px-3 py-1">Project Code</h6>
+                        <h6 class="font-jost text-lg font-bold text-blue-200 pt-3">{{ form.projectCode }}</h6>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="w-2/5 p-2">
+                  <div class="sml_crd h-full border-2 p-4 rounded-xl bg-panel-sub-dark border-panel-sub-dark">
+                      <div class="status text-left h-full">
+                        <h6 class="font-jost text-lg text-panel-text-light bg-panel-sub-dark/50 inline-flex rounded-full py-1 items-center gap-2"><span class="p-1 inline-block border border-panel-text-light/20 rounded-full "><Icon icon="mdi:users-group" /></span> Team Membars</h6>
+                        <div  class="font-jost text-lg font-medium capitalize text-panel-text-light pt-3 flex gap-3 items-center">
+                            <span class="font-jost text-xs shadow-2xl border border-emerald-400 bg-emerald-600  text-violet-100 inline-flex w-6 h-6 justify-center items-center rounded-full">1</span>
+                            <span class="text-sm ">Muhammad Usman Kholil</span>
+                            <span class="font-jost text-xs shadow-2xl border border-orange-400/50 bg-panel-sub-text text-violet-100 inline-block px-2 py-1 rounded-full">Member</span>
+                        </div>
+                        <div  class="font-jost text-lg font-medium capitalize text-panel-text-light pt-3 flex gap-3 items-center">
+                            <span class="font-jost text-xs shadow-2xl border border-emerald-400 bg-emerald-600  text-violet-100 inline-flex w-6 h-6 justify-center items-center rounded-full">2</span>
+                            <span class="text-sm "> Khairul Haque</span>
+                            <span class="font-jost text-xs shadow-2xl border border-orange-400/50 bg-panel-sub-text text-violet-100 inline-block px-2 py-1 rounded-full">Member</span>
+                        </div>
+                        <div  class="font-jost text-lg font-medium capitalize text-panel-text-light pt-3 flex gap-3 items-center">
+                            <span class="font-jost text-xs shadow-2xl border border-emerald-400 bg-emerald-600  text-violet-100 inline-flex w-6 h-6 justify-center items-center rounded-full">3</span>
+                            <span class="text-sm ">Misfaul</span>
+                            <span class="font-jost text-xs shadow-2xl border border-orange-400/50 bg-panel-sub-text text-violet-100 inline-block px-2 py-1 rounded-full">Member</span>
+                        </div>
+                        <div  class="font-jost text-lg font-medium capitalize text-panel-text-light pt-3 flex gap-3 items-center">
+                            <span class="font-jost text-xs shadow-2xl border border-emerald-400 bg-emerald-600  text-violet-100 inline-flex w-6 h-6 justify-center items-center rounded-full">4</span>
+                            <span class="text-sm ">Tariqujjaman Khondokar</span>
+                            <span class="font-jost text-xs shadow-2xl border border-orange-400/50 bg-panel-sub-text text-violet-100 inline-block px-2 py-1 rounded-full">Member</span>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+       
+          </div>
+
+        </div>
+
+       </div>
+   
+       <!-- Task Added Form -->
+       <div class="col-span-4">
+         <TaskAddCard/>
+       </div>
+       <!-- Task Board -->
+       <div class="col-span-8">
+         <TaskBoard/>
+       </div>
+      <!-- <section
         class="border-panel-sub-text/20 col-span-12 border dark:bg-panel-dark rounded-xl p-6 shadow-md"
       >
         <h2 class="text-xl border-b border-brdr/20 pb-2 text-panel-text-light font-semibold mb-10">
@@ -145,7 +261,7 @@
               <Icon icon="material-symbols:edit" class="inline-block mr-1"/> Edit Project
             </button>
         </div>
-      </section>
+      </section> -->
     </div>
   </div>
 </template>
@@ -156,11 +272,15 @@ definePageMeta({
   middleware: 'auth',
 });
 
-import { Icon } from '@iconify/vue';
+import { Icon, } from '@iconify/vue';
 import { ref, computed, onMounted } from 'vue';
 import Breadcrumb from '~/components/panel/Breadcrumb.vue';
 import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
+import Title from '../../../../components/panel/Title.vue';
+import TaskAddCard from '../../../../components/panel/cards/TaskAddCard.vue';
+import TaskBoard from '../../../../components/panel/cards/TaskBoard.vue';
+import ProjectOwnerCard from '../../../../components/panel/cards/ProjectOwnerCard.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);
@@ -278,31 +398,6 @@ const getStatusBadgeClass = (status) => {
 </script>
 
 <style scoped>
-.settings-page {
-  background-color: #1a1a1a; 
-  color: #e0e0e0;  
-  font-family: 'Inter', sans-serif;  
-}
-
-.bg-panel-dark {
-  background-color: #2a2a2a;  
-}
-
-.text-panel-text-light {
-  color: #e0e0e0; 
-}
-
-.text-panel-sub-text {
-  color: #b0b0b0; 
-}
-
-.border-brdr\/20 {
-  border-color: rgba(255, 255, 255, 0.1);  
-}
-
-.bg-panel-sub-text\/10 {
-  background-color: rgba(176, 176, 176, 0.1); 
-  border: 1px solid rgba(255, 255, 255, 0.05); 
-}
+ 
 
 </style>

@@ -88,24 +88,24 @@ const reviews = ref([
   // Your reviews data here
   {
     quote:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+      'Sutexzz helped me cut admin time by 70%. Now I focus more on creative work.',
     image: clientImage,
-    name: 'Umor',
-    position: 'CEO of G Tech.',
+    name: 'Anna',
+    position: 'UI/UX Designer',
   },
   {
     quote:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+      'Invoices, scheduling, and project updates all in one place. I can’t live without it.',
     image: clientImage,
-    name: 'Umor',
-    position: 'CEO of G Tech.',
+    name: 'James',
+    position: 'Web Developer',
   },
   {
     quote:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, aperiam. Quo unde, suscipit obcaecati et rerum dolor quas impedit enim.',
+      'It made my freelance workflow look professional and organized to clients.',
     image: clientImage,
-    name: 'Umor',
-    position: 'CEO of G Tech.',
+    name: 'Fatima',
+    position: 'Marketing Consultant',
   },
   {
     quote:

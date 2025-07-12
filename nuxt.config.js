@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-03-16',
   modules: ['nuxt-swiper', '@vueuse/motion/nuxt', 'v-gsap-nuxt', 'nuxt-mongoose'],
-  plugins: ['~/plugins/pinia.js', '~/plugins/chart.js'],
+  plugins: ['~/plugins/pinia.js', '~/plugins/chart.js','~/plugins/sweetalert.client.js',],
 
  
   server: {
@@ -55,6 +55,7 @@ export default defineNuxtConfig({
           }
         : false, 
     },
+ 
   },
 
   auth: {

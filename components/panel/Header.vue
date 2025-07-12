@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-panel-dark py-4 px-6 text-white border-panel-sub-dark rounded-lg z-[999999] mb-5 fixed w-[97.5%] md:w-[95%] lg:w-[81.5%]">
+    <nav class="bg-panel-dark py-4 px-6 text-white border-panel-sub-dark rounded-lg z-[99] mb-5 fixed w-[97.5%] md:w-[95%] lg:w-[81.5%]">
         <div class="flex justify-end lg:justify-between items-center">
             <div class="menus hidden lg:block">
                 <ul class="flex gap-5 2xl:gap-10 items-center">

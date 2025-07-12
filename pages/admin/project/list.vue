@@ -52,9 +52,11 @@ definePageMeta({
   layout: 'admin',
   middleware: 'auth',
 })
+import { useNuxtApp } from 'nuxt/app';
 import { onMounted, ref, computed } from 'vue';  
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '~/store/auth';
+
 
 const router = useRouter(); 
 
@@ -95,28 +97,47 @@ onMounted(async () => { // Make onMounted async to await fetchUser
   }
   projectFetch(); // Now call projectFetch
 });
+const { $swal } = useNuxtApp()
 
 const deleteProject = async (id) => {
   try {
-    const confirmed = confirm('Are you sure you want to delete this project?');
-    if (!confirmed) return;
+    const swalWithBootstrapButtons = $swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: true
+    })
 
-    const res = await fetch(`/api/query/Project/${id}`, {
-      method: "DELETE",
-    });
-    const result = await res.json(); // Await the JSON parsing
-    if (res.ok) {
-      projects.value = projects.value.filter(p => p._id !== id);
-      alert("Project deleted successfully");
-    } else {
-      console.error('Error deleting project:', result);
-      alert(`Error deleting project: ${result.error || result.message || 'Unknown error'}`);
+    const swalResult = await swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text:  "You won't be able to revert this!",
+      icon:  'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText:  'No, cancel!',
+      reverseButtons: true
+    })
+
+    if (swalResult.isConfirmed) {
+      const res          = await fetch(`/api/query/Project/${id}`, { method: 'DELETE' })
+      const responseJson = await res.json()
+
+      if (res.ok) {
+        projects.value = projects.value.filter(p => p._id !== id)
+        $swal.fire('Deleted!', 'Your record has been deleted.', 'success')
+      } else {
+        $swal.fire('Error', responseJson.error || responseJson.message || 'Unknown error', 'error')
+      }
+    } else if (swalResult.dismiss === $swal.DismissReason.cancel) {
+      $swal.fire('Cancelled', 'Your imaginary record is safe :)', 'info')
     }
-  } catch (error) {
-    console.error('Error during delete operation:', error);
-    alert(`Error deleting project: ${error.message}`);
+  } catch (err) {
+    console.error(err)
+    $swal.fire('Error', err.message, 'error')
   }
-};
+}
+
 </script>
 
 <style scoped>

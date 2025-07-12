@@ -19,7 +19,7 @@
                     </ul>
                     <div class="text-center">
                         <button :class="[{'bg-btn border-2 border-transparent px-4 xl:px-10 py-1 xl:py-3 rounded-lg mt-10 mx-auto text-center font-jost text-base xl:text-xl text-white ':!item.reqomendet,'bg-btn border-2  px-4 xl:px-10 py-1 xl:py-3 rounded-lg mt-10 mx-auto text-center font-jost text-base xl:text-xl text-white':item.reqomendet}]">
-                            Get Start
+                           Start free
                         </button>
                     </div>
                 </div>
@@ -36,14 +36,12 @@ const items = [
     {
         title:'Silver',
         short_info: 'For small startup and agency',
-        price: '99',
+        price: '00',
         price_info: 'per person, per month',
         feature_lists: [
-            '1. Lorem ipsum dolor sit Lorem ipsum dolor  ',
-            '2. Lorem ipsum dolor sit Lorem ipsum dolor  ',
-            '3. Lorem ipsum dolor sit Lorem ipsum dolor sit amet',
-            '4. Lorem ipsum dolor sit Lorem ipsum dolor sit amet',
-            '5. Lorem ipsum dolor sit Lorem ipsum dolor sit amet',
+            ' Basic CRM features',
+            ' 3 clients per month',
+            ' 2 invoices/month per client',
         ],
         next_link: '#'
     },
@@ -51,28 +49,25 @@ const items = [
         title:'Gold',
         short_info: 'For small startup and agency',
         reqomendet: true,
-        price: '99',
+        price: '9.99',
         price_info: 'per person, per month',
         feature_lists: [
-            ' Lorem ipsum dolor sit Lorem ipsum dolor',
-            ' Lorem ipsum dolor sit Lorem ipsum dolor',
-            ' Lorem ipsum dolor sit Lorem ipsum dolor',
-            ' Lorem ipsum dolor sit Lorem ipsum dolor',
-            ' Lorem ipsum dolor sit Lorem ipsum dolor',
+            'Unlimited clients',
+            'proposals & contracts',
+            'scheduling & time tracking',
+            'invoice & payments',
         ],
         next_link: '#'
     },
     {
         title:'Platinum',
         short_info: 'For small startup and agency',
-        price: '99',
+        price: '19.9',
         price_info: 'per person, per month',
         feature_lists: [
-            ' Lorem ipsum dolor sit Lorem ipsum dolor sit amet',
-            ' dolor sit Lorem ipsum dolor sit amet',
-            ' LOpsum dolor sit Lorem ipsum dolor sit amet',
-            ' Torem ipsum dolor sit Lorem ipsum',
-            ' Porem ipsum dolor sit Lorem ipsum dolor sit amet',
+            ' Everything in Pro + custom branding',
+            ' priority support', 
+            ' analytics reports', 
         ],
         next_link: '#'
     }
