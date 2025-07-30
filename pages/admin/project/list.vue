@@ -36,9 +36,9 @@
             <td class="py-2 px-4 text-sm">{{ new Date(project.startDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) }}</td>
             <td class="py-2 px-4 text-sm">{{ new Date(project.dueDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) }}</td>
             <td class="py-2 px-4 text-sm">
-              <button @click="editProject(project._id)" class="text-blue-400 bg-blue-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-blue-600 mr-2 cursor-pointer">Edit</button>
-              <button @click="deleteProject(project._id)" class="text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer">Delete</button>
-              <button @click="viewProject(project._id)" class="text-green-400 bg-green-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-green-600 ml-2 cursor-pointer">View</button>
+              <button @click="editProject(project._id)" class="edit">Edit</button>
+              <button @click="deleteProject(project._id)" class="delete">Delete</button>
+              <button @click="viewProject(project._id)" class="view">View</button>
             </td>
           </tr>
         </tbody>

@@ -6,14 +6,15 @@
        <div class="col-span-12 border border-panel-text-light/20 rounded-xl p-2">
            <div class="navs">
             <ul class="flex items-center">
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text" to="/">Overview</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Budget</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Users</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Activity</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" to="/">Settings</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text"  :to="`/admin/project/view/${$route.params.id}/overview`">Overview</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/milestone`">Milestone/Budget</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/members`">Members</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/delivery`">Delivery</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/invoices`">Invoices</nuxt-link></li>
             </ul>
            </div>
        </div>
+ 
         <!-- owner Profile -->
        <div class="col-span-4">
         <ProjectOwnerCard

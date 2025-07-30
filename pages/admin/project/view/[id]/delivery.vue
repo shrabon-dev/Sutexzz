@@ -1,0 +1,164 @@
+<template>
+  <div class="settings-page min-h-screen">
+    <Breadcrumb current="View Project" />
+
+    <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-xl">
+       <div class="col-span-12 border border-panel-text-light/20 rounded-xl p-2">
+           <div class="navs">
+            <ul class="flex items-center">
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0"  :to="`/admin/project/view/${$route.params.id}/overview`">Overview</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/milestone`">Milestone/Budget</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/members`">Members</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/100 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/delivery`">Delivery</nuxt-link></li>
+              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/invoices`">Invoices</nuxt-link></li>
+            </ul>
+           </div>
+       </div>
+ 
+  
+ 
+       <!-- Task Added Form -->
+       <div class="col-span-5">
+         <ProjectUpload/>
+       </div>
+       <!-- Task Board -->
+       <div class="col-span-7">
+         <ProjectCheckBox/>
+       </div>
+      
+    </div>
+  </div>
+</template>
+
+<script setup>
+definePageMeta({
+  layout: 'admin',
+  middleware: 'auth',
+});
+
+import { ref, computed, onMounted } from 'vue';
+import Breadcrumb from '~/components/panel/Breadcrumb.vue';
+import { useAuthStore } from '~/store/auth';
+import { useRoute, useRouter } from 'vue-router';
+import ProjectUpload from '../../../../../components/panel/project/ProjectUpload.vue';
+import ProjectCheckBox from '../../../../../components/panel/project/ProjectCheckBox.vue';
+
+const authStore = useAuthStore();
+const user = computed(() => authStore.user);
+const route = useRoute();
+const router = useRouter();
+
+const projectId = route.params.id;
+const loadingProjectData = ref(true);
+
+const form = ref({
+  freelancerId: null,
+  projectTitle: '',
+  projectCode: '',
+  description: '',
+  industry: '',
+  status: 'draft',
+  clientUsername: '',
+  assignedTeam: [],  
+  projectManager: '',
+  startDate: '',
+  dueDate: '',
+  budgetAmount: null,
+  currency: 'USD',
+  billingType: 'fixed',
+  hourlyRate: null,
+  internalNotes: '',
+  timezone: 'UTC',
+  language: 'en',
+  files: [], 
+});
+
+onMounted(async () => {
+  if (!authStore.user) {
+    await authStore.fetchUser();
+  }
+
+  if (projectId) {
+    await fetchProjectDetails(projectId);
+  } else {
+    console.warn('No project ID provided for viewing.');
+    loadingProjectData.value = false;
+    router.back();
+  }
+});
+
+const fetchProjectDetails = async (id) => {
+  try {
+    loadingProjectData.value = true;
+
+    const response = await $fetch(`/api/query/update/Project/${id}`);
+    console.log('Fetched project details:', response);
+    if (response.data) {
+
+      form.value = {
+        ...response.data,
+        assignedTeam: Array.isArray(response.data.assignedTeam)
+          ? response.data.assignedTeam
+          : (typeof response.data.assignedTeam === 'string'
+              ? response.data.assignedTeam.split(',').map(item => item.trim()).filter(item => item !== '')
+              : []),
+        startDate: response.data.startDate ? new Date(response.data.startDate).toISOString().split('T')[0] : '',
+        dueDate: response.data.dueDate ? new Date(response.data.dueDate).toISOString().split('T')[0] : '',
+        freelancerId: response.data.freelancerId || user.value?._id,
+        files: response.data.files || [],
+      };
+    } else {
+      console.error('Project not found for ID:', id);
+      router.back();
+    }
+  } catch (error) {
+    console.error('Error fetching project details:', error);
+    router.back();
+  } finally {
+    loadingProjectData.value = false;
+  }
+};
+
+const formatDate = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  } catch (e) {
+    return dateString; 
+  }
+};
+
+const formatCurrency = (amount, currencyCode) => {
+  if (amount === null || amount === undefined) return 'N/A';
+  try {
+    return new Intl.NumberFormat(undefined, {
+      style: 'currency',
+      currency: currencyCode || 'USD',
+      minimumFractionDigits: 0, 
+      maximumFractionDigits: 2, 
+    }).format(amount);
+  } catch (e) {
+    return `${amount} ${currencyCode || ''}`;  
+  }
+};
+
+const getStatusBadgeClass = (status) => {
+  switch (status) {
+    case 'active':
+      return 'bg-green-500/20 text-green-300';
+    case 'completed':
+      return 'bg-blue-500/20 text-blue-300';
+    case 'onhold':
+      return 'bg-yellow-500/20 text-yellow-300';
+    case 'draft':
+    default:
+      return 'bg-gray-500/20 text-gray-300';
+  }
+};
+</script>
+
+<style scoped>
+ 
+
+</style>

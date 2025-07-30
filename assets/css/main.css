@@ -70,5 +70,32 @@ option{
     .input_style {
         @apply w-full px-3 py-2 rounded-md   border border-brdr/40 text-panel-text-light placeholder:text-gray-400 focus:outline-none
     }
+    .th_style{
+        @apply !p-4 font-jost text-base font-medium text-panel-text-light
+    }
+    .td_style{
+        @apply !p-4 font-poppin text-sm font-normal text-panel-text-light  
+    }
+    .edit{
+        @apply text-blue-400 bg-blue-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-blue-600 mr-2 cursor-pointer
+    }
+    .view{
+        @apply text-green-400 bg-green-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-green-600 ml-2 cursor-pointer
+    }
+    .delete{
+        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    }
+    .download{
+        @apply text-orange-400 bg-orange-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    }
+    .completed{
+        @apply text-cyan-400 bg-cyan-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    }
+    .pending{
+        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    }
+    .inprogres{
+        @apply text-indigo-400 bg-indigo-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    }
 }
  
