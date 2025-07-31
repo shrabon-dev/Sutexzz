@@ -39,7 +39,7 @@ import Breadcrumb from '~/components/panel/Breadcrumb.vue';
 import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
 import InvoicePreview from '../../../../../components/panel/project/InvoicePreview.vue';
-import InvoicesList from '../../../../../components/panel/project/invoicesList.vue';
+import InvoicesList from '../../../../../components/panel/project/InvoicesList.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);
