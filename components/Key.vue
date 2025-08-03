@@ -5,7 +5,7 @@
       
         <div class="key_box flex justify-between flex-wrap gap-4 xl:gap-10">
           <div
-            v-gsap.whenVisible.from="{ opacity:0, y: 60, scale:.1,duration:2  }"
+            v-gsap.whenVisible.from="{ opacity:0,duration:2  }"
             v-for="(item, index) in items"
             :key="index"
             :class="[

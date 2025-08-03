@@ -4,7 +4,7 @@
             <Title key_t="Pricing" title="Our Pricing" description="Projectile helps you collaborate more smoothly and communicate better.  Projectile helps you collaborate 
                     more smoothly and communicate better. " />
          
-            <div v-gsap.whenVisible.from="{ scale: .5,duration:2 }" class="pricing_box flex justify-between xl:justify-center flex-wrap sm:pt-10">
+            <div v-gsap.whenVisible.from="{ opacity:0,duration:2 }" class="pricing_box flex justify-between xl:justify-center flex-wrap sm:pt-10">
                 <div  v-for="(item,index) in items" :class="['prc_card px-4 sm:px-10 md:px-3 mb-10 md:mb-0 lg:px-6 xl:px-10 2xl:px-14 py-10 md:py-6 xl:py-16 rounded-lg border-white/10 w-full sm:w-[100%%] md:w-[30%] lg:w-[30%]',{'md:scale-[1.1] bg-btn':item.reqomendet,'bg-white/10':!item.reqomendet}]">
                     <div class="tp border-b pb-5 border-white/40">
                         <h4 class="font-jost font-semibold md:text-base xl:text-2xl text-white">{{ item.title }} <span v-if="item.reqomendet == true" class="capitalize ml-5 bg-black text-xs xl:text-lg px-5 py-2 rounded-lg">most popular</span> </h4>

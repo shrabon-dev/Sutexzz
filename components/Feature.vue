@@ -5,11 +5,11 @@
         <div class="w-full lg:w-1/3">
           <div class="ftre_title">
             <div class="title text-left pb-16">
-              <span  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Features</span>
-              <h4 v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="text-white font-inter font-bold text-xl md:text-4xl">
+              <span  v-gsap.whenVisible.from="{ opacity: 0,duration: 3 }" class="bg-btn font-inter text-white text-xs md:text-base font-normal px-4 py-2 rounded-4xl inline-block mb-3">Features</span>
+              <h4 v-gsap.whenVisible.from="{ opacity: 0,duration: 3 }" class="text-white font-inter font-bold text-xl md:text-4xl">
                 Built for busy freelancers who want more freedom, not more tools
               </h4>
-              <p  v-gsap.whenVisible.from="{ opacity: 0, y: 100,duration: 3 }" class="font-jost text-sm md:text-xl text-white font-light pt-4 md:pt-10">
+              <p  v-gsap.whenVisible.from="{ opacity: 0,duration: 3 }" class="font-jost text-sm md:text-xl text-white font-light pt-4 md:pt-10">
               Everything in one place to streamline your entire workflow.
               </p>
             </div>
