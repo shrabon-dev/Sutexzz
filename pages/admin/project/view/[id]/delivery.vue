@@ -30,7 +30,7 @@ import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
 import ProjectUpload from '../../../../../components/panel/project/ProjectUpload.vue';
 import ProjectCheckBox from '../../../../../components/panel/project/ProjectCheckBox.vue';
-import Menus from '../../../../../components/panel/project/menus.vue';
+import Menus from '../../../../../components/panel/project/Menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);

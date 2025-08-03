@@ -32,7 +32,7 @@ import AddMilestone from '../../../../../components/panel/project/AddMilestone.v
 import MilestoneLists from '../../../../../components/panel/project/MilestoneLists.vue';
 import AddMember from '../../../../../components/panel/project/AddMember.vue';
 import MembersList from '../../../../../components/panel/project/MembersList.vue';
-import Menus from '../../../../../components/panel/project/menus.vue';
+import Menus from '../../../components/panel/project/Menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);

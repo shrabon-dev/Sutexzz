@@ -130,7 +130,7 @@ import { useRoute, useRouter } from 'vue-router';
 import TaskAddCard from '../../../../components/panel/cards/TaskAddCard.vue';
 import TaskBoard from '../../../../components/panel/cards/TaskBoard.vue';
 import ProjectOwnerCard from '../../../../components/panel/cards/ProjectOwnerCard.vue';
-import Menus from '../../../components/panel/cards/Menus.vue';
+import Menus from '../../../components/panel/project/Menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);

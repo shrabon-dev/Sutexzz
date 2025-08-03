@@ -30,7 +30,7 @@ import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
 import InvoicePreview from '../../../../../components/panel/project/InvoicePreview.vue';
 import InvoicesList from '../../../../../components/panel/project/InvoicesList.vue'; 
-import Menus from '../../../../../components/panel/project/menus.vue';
+import Menus from '../../../components/panel/project/Menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);

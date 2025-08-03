@@ -30,7 +30,7 @@ import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
 import AddMilestone from '../../../../../components/panel/project/AddMilestone.vue';
 import MilestoneLists from '../../../../../components/panel/project/MilestoneLists.vue';
-import Menus from '../../../../../components/panel/project/menus.vue';
+import Menus from '../../../components/panel/project/Menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);
