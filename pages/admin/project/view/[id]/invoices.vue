@@ -3,18 +3,8 @@
     <Breadcrumb current="View Project" />
 
     <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-xl">
-       <div class="col-span-12 border border-panel-text-light/20 rounded-xl p-2">
-           <div class="navs">
-            <ul class="flex items-center">
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0"  :to="`/admin/project/view/${$route.params.id}/overview`">Overview</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/milestone`">Milestone/Budget</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/members`">Members</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/0 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/delivery`">Delivery</nuxt-link></li>
-              <li><nuxt-link class="p-3 rounded inline-block text-panel-text-light bg-panel-sub-text/100 duration-300 ease-linear transition-all hover:bg-panel-sub-text" :to="`/admin/project/view/${$route.params.id}/invoices`">Invoices</nuxt-link></li>
-            </ul>
-           </div>
-       </div>
-
+       <!-- Project Menus -->
+       <Menus/>
        <!-- Task Added Form -->
        <div class="col-span-5">
          <InvoicesList/>
@@ -39,7 +29,8 @@ import Breadcrumb from '~/components/panel/Breadcrumb.vue';
 import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
 import InvoicePreview from '../../../../../components/panel/project/InvoicePreview.vue';
-import InvoicesList from '../../../../../components/panel/project/InvoicesList.vue';
+import InvoicesList from '../../../../../components/panel/project/InvoicesList.vue'; 
+import Menus from '../../../../../components/panel/project/menus.vue';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.user);

@@ -1,5 +1,5 @@
 <template>
-    <aside class="bg-panel-dark p-5 lg:p-5 text-white border-panel-sub-dark rounded-lg h-screen fixed w-fit">
+    <aside class="bg-panel-dark p-5 lg:pr-4  text-white border-panel-sub-dark rounded-lg h-screen fixed w-fit xl:w-[195px] 2xl:w-fit ">
         <div class="cmpny rounded-lg mb-10 bg-panel-sub-dark p-3 xl:p-5">
             <nuxt-link to="/" class="flex justify-between"><img class="w-24 md:w-14 xl:w-20 2xl:w-32" src="/assets/image/logo.png" alt=""> <span class="font-jost text-xs md:text-[8px] 2xl:text-sm text-panel-sub-text">V_3.6.5</span></nuxt-link>
         </div>
@@ -10,7 +10,6 @@
                 <div class="hvr_prnt max-h-0 group-hover:max-h-[160px] overflow-hidden duration-1000 ease-in-out">
                     <ul class="sub_menus pl-0 border  border-panel-sub-dark rounded ml-10 mt-2 py-2">
                           <li class=""><nuxt-link to="/admin/project/create" class="font-jost  text-sm xl:text-base text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-2 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm  flex justify-center  items-center text-xl w-8  h-8 p-1" icon="material-symbols-light:line-end-arrow-notch"  /> Create Project</nuxt-link></li>
-                          <li class=""><nuxt-link to="/admin/user" class="font-jost  text-sm xl:text-base text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-2 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm  flex justify-center  items-center text-xl w-8  h-8 p-1" icon="material-symbols-light:line-end-arrow-notch"  /> Assign Team Members</nuxt-link></li>
                           <li class=""><nuxt-link to="/admin/user" class="font-jost  text-sm xl:text-base text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-2 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm  flex justify-center  items-center text-xl w-8  h-8 p-1" icon="material-symbols-light:line-end-arrow-notch"  /> Track progress</nuxt-link></li>
                           <li class=""><nuxt-link to="/admin/project/list" class="font-jost  text-sm xl:text-base text-white font-light flex gap-4 items-center duration-300 ease-in-out hover:text-panel-sub-text border-r-2 border-transparent hover:border-panel-sub-text"> <Icon class="rounded-sm  flex justify-center  items-center text-xl w-8  h-8 p-1" icon="material-symbols-light:line-end-arrow-notch"  /> All Projects</nuxt-link></li>
                     </ul>

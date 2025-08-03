@@ -1,5 +1,5 @@
 <template>
-              <div class="card border border-panel-text-light/20 rounded-xl p-5">
+              <div class="card border border-panel-text-light/20 rounded-xl p-2 md:p-5">
               <Title icon="ic:round-add-task" text="New Task Add" />
               <div class="form mt-10">
                 <div class="grp mb-5 block">

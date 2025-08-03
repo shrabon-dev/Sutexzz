@@ -8,39 +8,39 @@
         <div class="participant client">
           <img :src="clientImage" :alt="clientName + ' Avatar'" class="avatar">
           <div class="details">
-            <span class="font-jost text-sm font-medium text-[#28A745] uppercase">Client:</span>
-            <span class="font-jost text-base font-normal text-panel-text-light uppercase">{{ clientName }}</span>
+            <span class="font-jost text-xs md:text-sm font-medium text-[#28A745] uppercase">Client:</span>
+            <span class="font-jost text-xs md:text-base font-normal text-panel-text-light uppercase">{{ clientName }}</span>
           </div>
         </div>
         <div class="participant freelancer">
           <img :src="freelancerImage" :alt="freelancerName + ' Avatar'" class="avatar">
           <div class="details">
-            <span class="font-jost text-sm font-medium text-[#28A745] uppercase">Freelancer:</span>
-            <span class="font-jost text-base font-normal text-panel-text-light uppercase">{{ freelancerName }}</span>
+            <span class="font-jost text-xs md:text-sm font-medium text-[#28A745] uppercase">Freelancer:</span>
+            <span class="font-jost text-xs md:text-base font-normal text-panel-text-light uppercase">{{ freelancerName }}</span>
           </div>
         </div>
       </div>
   
       <div class="border-t border-dashed border-panel-text-light mt-5 pt-5">
         <div class="info-item">
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">Start Date:</span>
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">{{ formattedStartDate }}</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">Start Date:</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">{{ formattedStartDate }}</span>
         </div>
         <div v-if="industry" class="info-item">
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">Industry:</span>
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">{{ industry }}</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">Industry:</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">{{ industry }}</span>
         </div>
         <div v-if="industry" class="info-item">
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">Currency:</span>
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">{{ currency }}</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">Currency:</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">{{ currency }}</span>
         </div>
         <div v-if="industry" class="info-item">
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">Billing Type:</span>
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">{{ billingType }}</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">Billing Type:</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">{{ billingType }}</span>
         </div>
         <div v-if="industry" class="info-item">
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase">Hourly Rate:</span>
-          <span class="font-jost text-sm font-normal text-panel-text-light uppercase"> {{ currency }} {{ hourlyRate }}</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase">Hourly Rate:</span>
+          <span class="font-jost text-xs md:text-sm font-normal text-panel-text-light uppercase"> {{ currency }} {{ hourlyRate }}</span>
         </div>
         
       </div>
