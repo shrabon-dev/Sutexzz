@@ -1,5 +1,5 @@
 <template>
-  <div class="settings-page min-h-screen">
+  <div class="settings-page ">
      <Breadcrumb current="User Setting" />
 
     <div class="grid grid-cols-12 gap-6 mt-4 bg-panel-dark p-5 rounded-md">
