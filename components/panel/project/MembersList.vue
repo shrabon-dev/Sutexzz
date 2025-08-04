@@ -1,8 +1,8 @@
 <template>
   <div class="card border border-panel-text-light/20 rounded-xl p-5">
     <Title icon="ic:baseline-group" text="Project Members" />
-    <div class="mt-10">
-      <table class="w-full border h-[400px] overflow-y-auto border-panel-text-light/20 rounded-lg">
+    <div class="mt-10 overflow-x-auto w-auto md:w-full">
+      <table class="max-w-full min-w-4xl  border h-[400px] overflow-y-auto border-panel-text-light/20 rounded-lg">
         <thead class="bg-primary">
           <tr class="bg-panel-sub-dark">
             <th class="th_style text-left">ID</th>

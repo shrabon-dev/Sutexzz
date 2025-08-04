@@ -1,8 +1,8 @@
 <template>
-              <div class="card border border-panel-text-light/20 rounded-xl p-5">
+            <div class="card border border-panel-text-light/20 rounded-xl p-5">
               <Title icon="ic:sharp-leaderboard" text="All Milestone Board" />
-              <div class=" mt-10">
-                <table class="w-full border h-[400px] overflow-y-auto border-panel-text-light/20 rounded-lg table">
+              <div class="overflow-x-auto w-auto md:w-full mt-10">
+                <table class="max-w-full min-w-4xl border h-[400px] overflow-y-auto border-panel-text-light/20 rounded-lg table">
                   <thead class="bg-primary">
                     <tr class="bg-panel-sub-dark">
                       <th class="th_style text-left">SL.</th>
@@ -31,13 +31,9 @@
                           <button  class="download ml-1"><Icon icon="tabler:cloud-download" class="inline-block"/> Invoice</button>
                       </td>
                     </tr>
-                     
                   </tbody>
                 </table>
-       
-      
               </div>
-              
           </div>
 </template>
 <script setup>

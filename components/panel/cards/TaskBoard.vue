@@ -1,16 +1,16 @@
 <template>
               <div class="card border border-panel-text-light/20 rounded-xl p-2 md:p-5">
               <Title icon="ic:sharp-leaderboard" text="Task Board" />
-              <div class="flex flex-wrap flex-col-reverse sm:flex-row mt-10">
-                <div class="w-full sm:w-3/5 lg:w-full xl:w-3/5">
+              <div class="flex flex-wrap flex-col-reverse sm:flex-row  mt-10">
+                <div class="w-full sm:w-3/5 lg:w-1/2 xl:w-3/5">
                       <h6 class="text-base font-jost text-panel-text-light font-medium mt-5 sm:mt-0">Full Details</h6>
                       <div class="borad  mt-5">
                       <ul>
-                        <li class="sm:flex justify-content-between items-start bg-panel-sub-dark rounded-lg p-3 mb-2">
+                        <li class="sm:flex lg:block xl:flex justify-content-between items-start bg-panel-sub-dark rounded-lg p-3 mb-2">
                           <span class="img mb-2 md:mb-0 w-20">
                             <img class="w-10 h-10 rounded-full border border-panel-sub-text/50 object-cover" src="https://img.freepik.com/premium-photo/young-man-isolated-blue_1368-124991.jpg?semt=ais_hybrid&w=740" alt="user_img">
                           </span>
-                          <div class="gp sm:w-3/5">
+                          <div class="gp sm:w-3/5 lg:w-full xl:w-3/5">
                             <span class="title block font-jost text-lg text-panel-text-light font-medium mt-2 md:mt-0 ">You have a bug that needs to be fixed.</span>
                             <span class="req block  font-jost text-base text-panel-text-light/50 font-normal max-h-52 overflow-auto my-5">Lorem ipsum, dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint est autem error quibusdam, dolore aliquid a commodi illum consectetur enim. amet consectetur adipisicing elit. Quod, molestias?</span>
                             <div class="files">
@@ -32,7 +32,7 @@
                       </ul>
                       </div>
                 </div>
-                <div class="w-full sm:w-2/5 lg:w-full xl:w-2/5 sm:pl-2 md:pl-5">
+                <div class="w-full sm:w-2/5 lg:w-1/2 xl:w-2/5 sm:pl-2 md:pl-5">
                   <h6 class="text-base font-jost text-panel-text-light font-medium text-end">All Task Lists</h6>
                   <div class="task_list border border-panel-text-light/20 mt-5 p-1 md:p-5 rounded-xl">
                     <ul class="text-end max-h-92 overflow-auto">

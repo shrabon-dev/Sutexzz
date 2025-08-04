@@ -68,34 +68,34 @@ option{
         @apply w-10 h-10 border border-transparent hover:border-panel-sub-text rounded-lg flex items-center justify-center bg-panel-sub-dark text-xl text-white cursor-pointer hover:text-panel-sub-text duration-300 ease-in-out
     }
     .input_style {
-        @apply w-full px-3 py-2 rounded-md   border border-brdr/40 text-panel-text-light placeholder:text-gray-400 focus:outline-none
+        @apply w-full px-3 py-2 rounded-md border border-brdr/40 text-panel-text-light placeholder:text-gray-400 focus:outline-none
     }
     .th_style{
-        @apply !p-4 font-jost text-base font-medium text-panel-text-light
+        @apply !p-4 font-jost text-xs xl:text-base font-medium text-panel-text-light
     }
     .td_style{
-        @apply !p-4 font-poppin text-sm font-normal text-panel-text-light  
+        @apply !p-4 font-poppin text-xs xl:text-sm font-normal text-panel-text-light  
     }
     .edit{
-        @apply text-blue-400 bg-blue-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-blue-600 mr-2 cursor-pointer
+        @apply text-blue-400 bg-blue-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-blue-600 mr-2 cursor-pointer text-xs xl:text-sm
     }
     .view{
-        @apply text-green-400 bg-green-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-green-600 ml-2 cursor-pointer
+        @apply text-green-400 bg-green-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-green-600 ml-2 cursor-pointer text-xs xl:text-sm
     }
     .delete{
-        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer text-xs xl:text-sm
     }
     .download{
-        @apply text-orange-400 bg-orange-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+        @apply text-orange-400 bg-orange-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer text-xs xl:text-sm
     }
     .completed{
-        @apply text-cyan-400 bg-cyan-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+        @apply text-cyan-400 bg-cyan-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer text-xs xl:text-sm
     }
     .pending{
-        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+        @apply text-red-400 bg-red-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer text-xs xl:text-sm
     }
-    .inprogres{
-        @apply text-indigo-400 bg-indigo-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer
+    .inprogres{ 
+        @apply text-indigo-400 bg-indigo-400/20 px-2 py-1 rounded border border-brdr/20 hover:text-red-600 cursor-pointer text-xs xl:text-sm
     }
 }
  

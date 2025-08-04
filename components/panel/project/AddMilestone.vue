@@ -3,15 +3,15 @@
               <Title icon="ic:round-add-task" text="New Milestone Create" />
               <div class="form mt-10">
                 <div class="grp mb-5 block">
-                  <label for="" class="block text-lg pb-2 font-jost text-panel-text-light">Title</label>
+                  <label for="" class="block text-xs xl:text-lg pb-2 font-jost text-panel-text-light">Title</label>
                   <input type="text" placeholder="ex: responsive fix" class="border border-panel-text-light/40 text-base p-2 font-jost focus:outline-0 text-panel-text-light rounded-lg w-full">
                 </div>
                 <div class="grp mb-5 block">
-                  <label for="" class="block text-lg pb-2 font-jost text-panel-text-light">Budget</label>
+                  <label for="" class="block text-xs xl:text-lg pb-2 font-jost text-panel-text-light">Budget</label>
                   <input type="text" placeholder="budget: $60.00" class="border border-panel-text-light/40 text-base p-2 font-jost focus:outline-0 text-panel-text-light rounded-lg w-full">
                 </div>
                 <div class="grp mb-5 block">
-                  <label for="" class="block text-lg pb-2 font-jost text-panel-text-light">Duration</label>
+                  <label for="" class="block text-xs xl:text-lg pb-2 font-jost text-panel-text-light">Duration</label>
                   <input type="date" placeholder="ex: responsive fix" class="border border-panel-text-light/40 text-base p-2 font-jost focus:outline-0 text-panel-text-light rounded-lg w-full">
                 </div>
                

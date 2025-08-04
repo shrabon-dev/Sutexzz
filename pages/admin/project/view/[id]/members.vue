@@ -6,11 +6,11 @@
         <!-- Project Menus -->
        <Menus/>
        <!-- Task Added Form -->
-       <div class="col-span-4">
+       <div class="col-span-12 xl:col-span-4">
          <AddMember/>
        </div>
        <!-- Task Board -->
-       <div class="col-span-8">
+       <div class="col-span-12 xl:col-span-8">
          <MembersList/>
        </div>
       

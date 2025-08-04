@@ -7,7 +7,7 @@
        <Menus/>
  
         <!-- owner Profile -->
-       <div class="col-span-12 md:col-span-4 lg:col-span-12 xl:col-span-4">
+       <div class="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-4">
         <ProjectOwnerCard
         project-title="Blog Content Strategy & Writing"
         project-description="Creating engaging blog content for a new startup in the wellness niche."
@@ -19,7 +19,7 @@
         contact-email="emily.w@example.com"
       />
        </div>
-       <div class="top col-span-12 sm:col-span-6 md:col-span-8 lg:col-span-12 xl:col-span-8">
+       <div class="top col-span-12 sm:col-span-6 md:col-span-12 lg:col-span-12 xl:col-span-8">
         <div class="bg-panel-ddark/0 border border-panel-text-light/20 rounded-xl p-1 md:p-5">
           <h2 class="font-medium text-xl md:text-4xl text-panel-text-light font-jost flex gap-5 items-center mb-10"><Icon icon="mingcute:flash-fill"/> {{ form.projectTitle }}</h2>
           <div class="flex flex-wrap items-stretch">
@@ -104,11 +104,11 @@
        </div>
    
        <!-- Task Added Form -->
-       <div class="col-span-12 sm:col-span-6 md:col-span-4">
+       <div class="col-span-12 sm:col-span-6 md:col-span-12 lg:col-span-12 xl:col-span-4">
          <TaskAddCard/>
        </div>
        <!-- Task Board -->
-       <div class="col-span-12 md:col-span-8">
+       <div class="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-8">
          <TaskBoard/>
        </div>
    
