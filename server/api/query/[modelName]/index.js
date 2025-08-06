@@ -2,12 +2,13 @@ import connectDB from "~/server/middleware/mongo";
 import Project from "~/server/models/Project";
 import User from "~/server/models/User";  
 import { readBody } from 'h3';  
+import Task from "~/server/models/Task";
 
 export default defineEventHandler(async (event) => {
   await connectDB();
 
   const { modelName, id } = event.context.params;
-  const models = { User, Project };
+  const models = { User, Project, Task };
   const model = models[modelName];
 
   const req = event.req.method;

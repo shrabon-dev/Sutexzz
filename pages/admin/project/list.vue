@@ -59,7 +59,7 @@ import { useAuthStore } from '~/store/auth';
 
 
 const router = useRouter(); 
-
+const { $swal } = useNuxtApp()
 const loadingProjects = ref(false);
 const projects = ref([]);
 const authStore = useAuthStore()
@@ -91,13 +91,13 @@ const projectFetch = async () => {
   }
 };
 
-onMounted(async () => { // Make onMounted async to await fetchUser
+onMounted(async () => {
   if (!authStore.user) {
-    await authStore.fetchUser(); // Await fetchUser to ensure user is loaded
+    await authStore.fetchUser(); 
   }
-  projectFetch(); // Now call projectFetch
+  projectFetch(); 
 });
-const { $swal } = useNuxtApp()
+projectFetch(); 
 
 const deleteProject = async (id) => {
   try {

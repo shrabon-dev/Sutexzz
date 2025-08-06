@@ -105,11 +105,11 @@
    
        <!-- Task Added Form -->
        <div class="col-span-12 sm:col-span-6 md:col-span-12 lg:col-span-12 xl:col-span-4">
-         <TaskAddCard/>
+         <TaskAddCard :projectID="projectId"/>
        </div>
        <!-- Task Board -->
        <div class="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-8">
-         <TaskBoard/>
+         <TaskBoard :projectID="projectId"/>
        </div>
    
     </div>
