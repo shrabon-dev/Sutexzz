@@ -6,11 +6,11 @@
        <!-- Project Menus -->
        <Menus/>
        <!-- Task Added Form -->
-       <div class="col-span-12 xl:col-span-5">
-         <InvoicesList/>
+       <div class="col-span-12 xl:col-span-6">
+         <InvoicesList :projectID="projectId"/>
        </div>
        <!-- Task Board -->
-       <div class="col-span-12 xl:col-span-7">
+       <div class="col-span-12 xl:col-span-6">
          <InvoicePreview/>
        </div>
       

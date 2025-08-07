@@ -34,11 +34,10 @@
                 <div class="w-full sm:w-2/5 lg:w-1/2 xl:w-2/5 sm:pl-2 md:pl-5">
                   <h6 class="text-base font-jost text-panel-text-light font-medium text-end">All Task Lists</h6>
                   <div class="task_list border border-panel-text-light/20 mt-5 p-1 md:p-5 rounded-xl">
-                    <ul class="text-end max-h-92 overflow-auto">
-
+                    <ul v-if="tasks && tasks.length" class="text-end max-h-92 overflow-auto">
                       <li v-for="(value, index) in tasks" :key="tasks.id" @click="handleTaskDetails(value)" class="text-xs md:text-base mb-2 cursor-pointer hover:bg-orange-500 transition-all ease-linear duration-300 font-jost bg-panel-sub-dark pl-5 rounded-full text-panel-text-light font-medium text-end block">{{ value.title }}<span class="ml-10 rounded-full px-5 py-2 inline-block bg-panel-dark shadow-lg border-l-2 border-orange-500">Task #{{ index+1 }}</span></li>
-                      
                     </ul>
+                     <NoData v-else message="You have no tasks yet" subtext="Start by creating a new task." />
                   </div>
                 </div>
               </div>
@@ -50,6 +49,7 @@ import { onMounted } from 'vue';
 import Title from '../Title.vue';
 import { Icon, } from '@iconify/vue';
 import { isLoadStore } from '../../../store/isLoad';
+import NoData from '../NoData.vue';
 
 const isLoad = isLoadStore();
 

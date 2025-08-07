@@ -7,11 +7,11 @@
        <Menus/>
        <!-- Task Added Form -->
        <div class="col-span-12 xl:col-span-4">
-         <AddMilestone/>
+         <AddMilestone :projectID="projectId" :pDetails="projectDetails.value"/>
        </div>
        <!-- Task Board -->
        <div class="col-span-12 xl:col-span-8">
-         <MilestoneLists/>
+         <MilestoneLists :projectID="projectId"/>
        </div>
       
     </div>
@@ -24,7 +24,7 @@ definePageMeta({
   middleware: 'auth',
 });
 
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, reactive } from 'vue';
 import Breadcrumb from '~/components/panel/Breadcrumb.vue';
 import { useAuthStore } from '~/store/auth';
 import { useRoute, useRouter } from 'vue-router';
@@ -40,7 +40,7 @@ const router = useRouter();
 const projectId = route.params.id;
 const loadingProjectData = ref(true);
 
-const form = ref({
+const projectDetails = reactive({
   freelancerId: null,
   projectTitle: '',
   projectCode: '',
@@ -81,10 +81,10 @@ const fetchProjectDetails = async (id) => {
     loadingProjectData.value = true;
 
     const response = await $fetch(`/api/query/update/Project/${id}`);
-    console.log('Fetched project details:', response);
+    // console.log('Fetched project details:', response);
     if (response.data) {
 
-      form.value = {
+      projectDetails.value = {
         ...response.data,
         assignedTeam: Array.isArray(response.data.assignedTeam)
           ? response.data.assignedTeam
@@ -96,6 +96,7 @@ const fetchProjectDetails = async (id) => {
         freelancerId: response.data.freelancerId || user.value?._id,
         files: response.data.files || [],
       };
+
     } else {
       console.error('Project not found for ID:', id);
       router.back();
